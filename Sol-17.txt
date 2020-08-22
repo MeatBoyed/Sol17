@@ -1,0 +1,5 @@
+Shopping Cart is a useContext hook, which uses a custom hook of Cart.
+Cart hook is updated everytime the localStorage is changed.
+When you add to the localstorage, the Cart hook updates, and therefore updates the ShoppingCart context.
+
+When Checking out. 
