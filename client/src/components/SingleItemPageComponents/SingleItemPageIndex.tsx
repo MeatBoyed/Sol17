@@ -1,5 +1,10 @@
 import React from 'react';
 
+// Add recommened sction
+
+// Style Sheet
+import './SingleItemPageStyle.css';
+
 // Core Components
 import { NavigationBar } from '../NavigationBar';
 import { ImageViewer } from './ImageViewer';
@@ -10,11 +15,13 @@ interface Props {}
 
 export const SingleItemPageIndex: React.FC<Props> = () => {
   return (
-    <div>
+    <section id="SingelItem">
       <NavigationBar />
-      <ImageViewer />
-      <DescriptionViewer />
+      <div id="ItemImageViewerAndDetail">
+        <ImageViewer />
+        <DescriptionViewer />
+      </div>
       <FooterSection />
-    </div>
+    </section>
   );
 };
