@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Import react-image-gallery
 import ImageGallery from 'react-image-gallery';
@@ -33,15 +33,32 @@ export const ImageViewer: React.FC<Props> = () => {
       thumbnail: ImgFour,
     },
   ];
+
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth <= 600) {
+        setIsMobile(true);
+      } else setIsMobile(false);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
     <div id="ImageViewer">
       <ImageGallery
         items={images}
-        thumbnailPosition="left"
-        showNav={false}
+        thumbnailPosition={isMobile ? 'bottom' : 'left'}
+        showNav={isMobile}
         showFullscreenButton={false}
         showPlayButton={false}
-        showThumbnails={true}
+        showThumbnails={!isMobile}
         lazyLoad={true}
       />
     </div>

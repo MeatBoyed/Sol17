@@ -50,11 +50,17 @@ body a:visited {
   width: 40px;
 }
 
+#SingleItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #ItemImageViewerAndDetail {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 6em;
+  margin-top: 4em;
 }
 
 #ImageViewer {
@@ -232,8 +238,8 @@ body a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   border-bottom: 5px solid #212121;
+  margin-top: 3em;
 }
 
 .itemRec {
@@ -243,7 +249,6 @@ body a:visited {
   flex-direction: column;
   width: 12em;
   margin-right: 2em;
-  margin-top: 2em;
   margin-bottom: 1em;
 }
 
@@ -302,4 +307,98 @@ body a:visited {
 }
 .SocialLinks svg {
   width: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  #ItemImageViewerAndDetail {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  #ImageViewer {
+    margin-right: 0;
+    width: 80%;
+  }
+
+  #DescriptionViewer {
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  .titleContainer h1 {
+    font-size: 45px;
+  }
+
+  .titleContainer {
+    align-items: center;
+  }
+
+  .colourText {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .colourPickerContainer,
+  .sizePicker {
+    justify-content: center;
+  }
+
+  .sizePicker .sizeButton {
+    margin-right: 5px;
+  }
+
+  .itemContainer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1102px) {
+  #SingelItem {
+    margin-top: 3em;
+  }
+
+  #ItemImageViewerAndDetail {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  #ImageViewer {
+    margin-right: 0;
+    width: 80%;
+  }
+
+  #DescriptionViewer {
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  .titleContainer h1 {
+    font-size: 36px;
+  }
+
+  .titleContainer {
+    align-items: center;
+  }
+
+  .colourText {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .colourPickerContainer,
+  .sizePicker {
+    justify-content: center;
+  }
+
+  .sizePicker .sizeButton {
+    margin-right: 5px;
+  }
+
+  .itemContainer {
+    width: 80%;
+  }
 }

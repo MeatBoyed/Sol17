@@ -16,14 +16,16 @@ interface Props {}
 
 export const SingleItemPageIndex: React.FC<Props> = () => {
   return (
-    <section id="SingelItem">
+    <React.Fragment>
       <NavigationBar />
-      <div id="ItemImageViewerAndDetail">
-        <ImageViewer />
-        <DescriptionViewer />
-      </div>
-      <RecomendedSection />
+      <section id="SingelItem">
+        <div id="ItemImageViewerAndDetail">
+          <ImageViewer />
+          <DescriptionViewer />
+        </div>
+        <RecomendedSection />
+      </section>
       <FooterSection />
-    </section>
+    </React.Fragment>
   );
 };
