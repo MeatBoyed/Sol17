@@ -9,6 +9,7 @@ import './SingleItemPageStyle.css';
 import { NavigationBar } from '../NavigationBar';
 import { ImageViewer } from './ImageViewer';
 import { DescriptionViewer } from './DescriptionViewer';
+import { RecomendedSection } from './RecomendedSection';
 import { FooterSection } from '../FooterSection';
 
 interface Props {}
@@ -21,6 +22,7 @@ export const SingleItemPageIndex: React.FC<Props> = () => {
         <ImageViewer />
         <DescriptionViewer />
       </div>
+      <RecomendedSection />
       <FooterSection />
     </section>
   );

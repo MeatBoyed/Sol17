@@ -121,6 +121,10 @@ body a:visited {
   border: 0;
 }
 
+.colourPickerContainer .colourButton .colourButtonInner:hover {
+  cursor: pointer;
+}
+
 .colourButtonInner.black {
   background: #212121;
 }
@@ -153,6 +157,10 @@ body a:visited {
   margin-right: 15px;
 }
 
+.sizePicker .sizeButton:hover {
+  cursor: pointer;
+}
+
 .AddToCartButton {
   background: #212121;
   color: white;
@@ -164,17 +172,25 @@ body a:visited {
   margin-bottom: 0.8em;
 }
 
+.AddToCartButton:hover {
+  cursor: pointer;
+}
+
 .infoDropDown {
   margin-top: 0.5em;
 }
 
 .itemDescription {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-top: 0.8em;
+}
+
+.itemDescription .itemDescriptionText {
+  border-bottom: 3px solid #212121;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid #212121;
-  margin-top: 0.8em;
   padding-bottom: 6px;
 }
 
@@ -186,6 +202,57 @@ body a:visited {
 .itemDescription svg {
   margin-right: 5px;
   width: 20px;
+}
+
+.itemDescription svg:hover {
+  cursor: pointer;
+}
+
+.itemDescription .dropDownText {
+  width: 100%;
+  font-size: 16px;
+  padding-top: 7px;
+}
+
+#Recomended {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10em;
+}
+
+#Recomended h3 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 100;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 5px solid #212121;
+}
+
+.itemRec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 12em;
+  margin-right: 2em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.itemRec:hover {
+  cursor: pointer;
+}
+
+.itemRec img {
+  width: 100%;
 }
 
 /* Footer Section */
