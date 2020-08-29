@@ -50,11 +50,182 @@ body a:visited {
   width: 40px;
 }
 
+/* Checkout Page */
 #CheckoutPage {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
+}
+
+#CheckoutSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#CheckoutSection h1 {
+  font-size: 32px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  margin: 1em 0 0 0;
+}
+
+#CheckoutSection p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
+#CheckoutSection form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3em;
+}
+
+.contactInfo {
+  width: 100%;
+  margin-bottom: 5em;
+}
+
+.shippingAddress {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameInput {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.nameInput div {
+  margin-right: 1em;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 17px;
+  /* width: 50%; */
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+.saveInfoContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 0 12px 0;
+}
+
+.saveInfoContainer input {
+  margin: 0 12px 0 0;
+}
+
+.saveInfoContainer h5 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 100;
+}
+
+.returnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1em;
+}
+
+.returnContainer:hover {
+  cursor: pointer;
+}
+
+.returnContainer svg {
+  transform: rotate(90deg);
+  width: 18px;
+}
+
+.returnContainer h5 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 100;
+  margin-left: 13px;
+}
+
+.submitButton {
+  justify-self: flex-end;
+  background: black;
+  color: white;
+  width: 15em;
+  height: 4em;
+  border-radius: 13px;
+  border: 0;
+  margin-left: 21em;
+  margin-top: 4em;
+}
+
+.submitButton h5 {
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-align: center;
+  margin: 0;
 }
 
 /* Footer Section */

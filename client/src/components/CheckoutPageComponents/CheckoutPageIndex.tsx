@@ -5,6 +5,7 @@ import './CheckoutPageStyle.css';
 // Core Components
 import { NavigationBar } from '../NavigationBar';
 import { OrderSummarySection } from './OrderSummarySection';
+import { CheckoutSection } from './CheckoutSection';
 import { FooterSection } from '../FooterSection';
 
 interface Props {}
@@ -15,9 +16,7 @@ export const CheckoutPageIndex: React.FC<Props> = () => {
       <NavigationBar />
       <section id="CheckoutPage">
         <OrderSummarySection />
-        <div id="Checkout">
-          <h1>Checkout</h1>
-        </div>
+        <CheckoutSection />
       </section>
       <FooterSection />
     </React.Fragment>
