@@ -149,7 +149,8 @@ body a:visited {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image: linear-gradient(to right, rgb(9, 78, 99), #28c8f8);
+  /* border-image: linear-gradient(to right, #11998e, #38ef7d); */
   border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -226,6 +227,100 @@ body a:visited {
   font-size: 15px;
   text-align: center;
   margin: 0;
+}
+
+#OrderSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#OrderSummary .headerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#OrderSummary .headerTitle h1 {
+  margin: 0;
+  margin: 1em 0 0 1em;
+  font-weight: 100;
+  font-size: 29px;
+  letter-spacing: 4px;
+}
+
+.shoppingCartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+  border-bottom: 2px solid #212121;
+}
+
+.cartItemImage {
+  width: 7em;
+  margin-right: 1.5em;
+}
+
+.cartItemImage img {
+  width: 100%;
+}
+
+.itemDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 8em;
+}
+
+.itemDescription h4 {
+  margin: 0;
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: 100;
+}
+
+.itemDescription p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.cartItemPrice {
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.subtotalContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.subtotalContainer .price {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Footer Section */
