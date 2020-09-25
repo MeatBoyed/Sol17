@@ -18,44 +18,21 @@ body a:visited {
   color: black;
 }
 
-/* Navbar Section */
-#NavigationBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 75px;
-  border-bottom: 2px solid #707070;
-  font-size: 32px;
-}
-
-.LogoIcon {
-  margin-left: 1em;
-  letter-spacing: 7px;
-}
-
-.Pages {
-  font-size: 26px;
-}
-
-.Pages .ShopLink {
-  margin-right: 35px;
-}
-
-.ShoppingCartIcon {
-  margin-right: 1em;
-}
-
-.ShoppingCartIcon svg {
-  width: 40px;
-}
-
 /* Checkout Page */
+
+.headerText {
+  font-size: 32px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  margin: 1em 0 2em 0;
+  text-align: center;
+}
+
 #CheckoutPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row-reverse;
+  flex-direction: column;
   margin-top: 2em;
 }
 
@@ -64,15 +41,8 @@ body a:visited {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 60em;
-  border-right: 10px solid;
-  padding-right: 50px;
-}
-
-#CheckoutSection h1 {
-  font-size: 32px;
-  font-weight: 100;
-  letter-spacing: 10px;
+  width: 40%;
+  margin-top: 5em;
 }
 
 #CheckoutSection p {
@@ -88,6 +58,7 @@ body a:visited {
   justify-content: center;
   align-items: flex-start;
   margin-top: 3em;
+  width: 100%;
 }
 
 .contactInfo {
@@ -98,6 +69,7 @@ body a:visited {
 .shippingAddress {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .nameInput {
@@ -220,8 +192,7 @@ body a:visited {
   height: 4em;
   border-radius: 13px;
   border: 0;
-  margin-left: 21em;
-  margin-top: 4em;
+  align-self: flex-end;
 }
 
 .submitButton h5 {
@@ -237,71 +208,129 @@ body a:visited {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 60em;
-  padding-left: 50px;
+  width: 40%;
 }
 
 #OrderSummary .headerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 2px solid #212121;
+  border-radius: 5px;
+}
+
+.headerTitle .headerTitleText {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#OrderSummary .headerTitle h1 {
+.headerTitle .headerTitleText svg {
+  width: 42px;
+  margin-left: 15px;
+}
+
+.headerTitle .headerTitleText h1 {
   margin: 0;
-  margin: 1em 0 0 1em;
   font-weight: 100;
-  font-size: 29px;
+  font-size: 20px;
   letter-spacing: 4px;
+  margin-left: 10px;
+  padding-top: 16px;
+}
+
+.headerTitleText .dropDown svg {
+  width: 22px;
+  padding-top: 26px;
+  margin-left: 10px;
+}
+
+.headerTitle .headerTitelPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitelPrice .totalPriceCurrency {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.headerTitelPrice .totalPrice {
+  font-size: 15px;
+  letter-spacing: 5px;
+  padding-right: 25px;
+}
+
+.ShoppingCartContainerMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #212121;
+  margin-top: 0.5em;
+  border-bottom-right-radius: 21px;
+  border-bottom-left-radius: 21px;
 }
 
 .shoppingCartContainer {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center;
-  margin: 5em 0;
-  height: 35em;
+  align-items: flex-start;
+  height: 28em;
   overflow: auto;
   white-space: nowrap;
+  width: 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .cartItem {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 2em;
+  margin-top: 20px;
 }
 
-.cartItemImage {
-  width: 7em;
+.cartItemMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.cartItemMain .cartItemImage {
+  width: 5.5em;
   margin-right: 1.5em;
   display: flex;
 }
 
-.cartItemImage img {
+.cartItemMain .cartItemImage img {
   width: 100%;
 }
 
-.itemDescription {
+.cartItemMain .itemDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-right: 10em;
 }
 
-.itemDescription h4 {
+.cartItemMain .itemDescription h4 {
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 5px;
   font-weight: 100;
 }
 
-.itemDescription p {
+.cartItemMain .itemDescription p {
   margin: 0;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 100;
 }
 
@@ -309,21 +338,23 @@ body a:visited {
   font-size: 16px;
   font-weight: 100;
   letter-spacing: 5px;
+  padding-right: 15px;
 }
 
 .priceContainer {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   width: 100%;
+  margin-top: 5em;
 }
 
 .subtotalContainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
   border-bottom: 4px solid;
   padding-bottom: 25px;
 }
@@ -346,6 +377,7 @@ body a:visited {
 .totalContainer {
   display: flex;
   justify-content: space-between;
+  width: 95%;
 }
 
 .totalContainer .totalPrice {

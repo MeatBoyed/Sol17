@@ -5,7 +5,6 @@ interface Props {}
 export const CheckoutSection: React.FC<Props> = () => {
   return (
     <div id="CheckoutSection">
-      <h1>Sol - 17</h1>
       <form action="submit">
         <div className="contactInfo">
           <p>Contact information</p>

@@ -13,6 +13,7 @@ interface Props {}
 export const CheckoutPageIndex: React.FC<Props> = () => {
   return (
     <React.Fragment>
+      <h1 className="headerText">Sol - 17</h1>
       <section id="CheckoutPage">
         <OrderSummarySection />
         <CheckoutSection />
