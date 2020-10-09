@@ -246,6 +246,10 @@ body a:visited {
   margin-left: 10px;
 }
 
+.headerTitleText .dropDown svg:hover {
+  cursor: pointer;
+}
+
 .headerTitle .headerTitelPrice {
   display: flex;
   justify-content: space-between;
@@ -437,4 +441,129 @@ body a:visited {
 }
 .SocialLinks svg {
   width: 35px;
+}
+
+/* Extra Extra small devices (Glaxy Fold, 200px and down) */
+/* TODO Add support for these devices */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #OrderSummary {
+    width: 90%;
+  }
+
+  .headerTitle .headerTitleText svg {
+    width: 22px;
+    margin-left: 15px;
+  }
+
+  .headerTitle .headerTitleText h1 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding-top: 0;
+  }
+
+  .headerTitleText .dropDown svg {
+    width: 17px;
+    padding-top: 9px;
+    margin-left: 4px;
+  }
+
+  .headerTitelPrice .totalPriceCurrency {
+    letter-spacing: 2px;
+    font-size: 10px;
+  }
+
+  .headerTitelPrice .totalPrice {
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding-right: 5px;
+  }
+
+  .cartItem {
+    margin-top: 25px;
+  }
+
+  .cartItemMain .cartItemImage {
+    width: 2.3em;
+  }
+
+  .cartItemMain .itemDescription h4 {
+    font-size: 16px;
+  }
+
+  .cartItem .itemDescription p {
+    font-size: 12px;
+  }
+
+  .cartItemPrice {
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-right: 7px;
+  }
+
+  .subtotalContainer .price p {
+    font-size: 21px;
+  }
+
+  .subtotalContainer p {
+    font-size: 12px;
+  }
+
+  .totalContainer .totalPrice {
+    margin-right: 0em;
+    font-size: 25px;
+  }
+
+  .totalContainer .priceTotalContainer .priceTotalCurrency {
+    font-size: 20px;
+  }
+
+  .totalContainer .priceTotalContainer p {
+    font-size: 20px;
+  }
+
+  #CheckoutSection {
+    width: 90%;
+  }
+
+  .returnContainer {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #OrderSummary {
+    width: 90%;
+  }
+
+  .headerTitle .headerTitleText svg {
+    width: 22px;
+    margin-left: 15px;
+  }
+
+  #CheckoutSection {
+    width: 90%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #OrderSummary {
+    width: 40%;
+  }
+
+  #CheckoutSection {
+    width: 40%;
+  }
 }

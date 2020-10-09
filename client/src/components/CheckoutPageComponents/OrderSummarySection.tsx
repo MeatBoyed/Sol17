@@ -51,7 +51,6 @@ export const OrderSummarySection: React.FC<Props> = () => {
           </div>
         </div>
         <div className="headerTitelPrice">
-          <p className="totalPriceCurrency">NAD</p>
           <p className="totalPrice">$5 999.99</p>
         </div>
       </div>
