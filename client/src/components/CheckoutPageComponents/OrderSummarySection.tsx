@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 // Image import
 import NikeAirImage from '../../img/nikeAir.jpg';
@@ -6,11 +6,13 @@ import NikeAirImage from '../../img/nikeAir.jpg';
 interface Props {}
 
 export const OrderSummarySection: React.FC<Props> = () => {
+  const [showCart, setShowCart] = useState(false)
+
   return (
     <div id="OrderSummary">
       <div className="headerTitle">
         <div className="headerTitleText">
-          <svg xmlns="http://www.w3.org/2000/svg" width="57.355" height={72} viewBox="0 0 57.355 72">
+          <svg xmlns="http://www.w3.org/2000/svg" width="57.355" height={72} viewBox="0 0 57.355 72" >
             <g id="Group_9" data-name="Group 9" transform="translate(-1782 -40)">
               <text
                 id="_5"
@@ -40,6 +42,7 @@ export const OrderSummarySection: React.FC<Props> = () => {
               width="29.108"
               height="15.849"
               viewBox="0 0 29.108 15.849"
+              onClick={() => setShowCart(!showCart)}>
             >
               <path
                 id="Path_4"
@@ -54,7 +57,7 @@ export const OrderSummarySection: React.FC<Props> = () => {
           <p className="totalPrice">$5 999.99</p>
         </div>
       </div>
-      <div className="ShoppingCartContainerMain">
+      {showCart ? <div className="ShoppingCartContainerMain">
         <div className="shoppingCartContainer">
           <div className="cartItem">
             <div className="cartItemMain">
@@ -319,7 +322,7 @@ export const OrderSummarySection: React.FC<Props> = () => {
             </div>
           </div>
         </div>
-      </div>
+  </div> : null }
     </div>
   );
 };
