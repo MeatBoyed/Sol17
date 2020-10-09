@@ -1,0 +1,569 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  color: black;
+  font-family: 'Alata';
+}
+
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+body a:visited {
+  color: black;
+}
+
+/* Checkout Page */
+
+.headerText {
+  font-size: 32px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  margin: 1em 0 2em 0;
+  text-align: center;
+}
+
+#CheckoutPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+#CheckoutSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40%;
+  margin-top: 5em;
+}
+
+#CheckoutSection p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
+#CheckoutSection form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3em;
+  width: 100%;
+}
+
+.contactInfo {
+  width: 100%;
+  margin-bottom: 5em;
+}
+
+.shippingAddress {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nameInput {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.nameInput div {
+  margin-right: 1em;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 17px;
+  /* width: 50%; */
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, rgb(9, 78, 99), #28c8f8);
+  /* border-image: linear-gradient(to right, #11998e, #38ef7d); */
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+.saveInfoContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 0 12px 0;
+}
+
+.saveInfoContainer input {
+  margin: 0 12px 0 0;
+}
+
+.saveInfoContainer h5 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 100;
+}
+
+.returnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1em;
+}
+
+.returnContainer:hover {
+  cursor: pointer;
+}
+
+.returnContainer svg {
+  transform: rotate(90deg);
+  width: 18px;
+}
+
+.returnContainer h5 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 100;
+  margin-left: 13px;
+}
+
+.submitButton {
+  justify-self: flex-end;
+  background: black;
+  color: white;
+  width: 15em;
+  height: 4em;
+  border-radius: 13px;
+  border: 0;
+  align-self: flex-end;
+}
+
+.submitButton h5 {
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-align: center;
+  margin: 0;
+}
+
+#OrderSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 40%;
+}
+
+#OrderSummary .headerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 2px solid #212121;
+  border-radius: 5px;
+}
+
+.headerTitle .headerTitleText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerTitle .headerTitleText svg {
+  width: 42px;
+  margin-left: 15px;
+}
+
+.headerTitle .headerTitleText h1 {
+  margin: 0;
+  font-weight: 100;
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin-left: 10px;
+  padding-top: 16px;
+}
+
+.headerTitleText .dropDown svg {
+  width: 22px;
+  padding-top: 26px;
+  margin-left: 10px;
+}
+
+.headerTitleText .dropDown svg:hover {
+  cursor: pointer;
+}
+
+.headerTitle .headerTitelPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitelPrice .totalPriceCurrency {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.headerTitelPrice .totalPrice {
+  font-size: 15px;
+  letter-spacing: 5px;
+  padding-right: 25px;
+}
+
+.ShoppingCartContainerMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #212121;
+  margin-top: 0.5em;
+  border-bottom-right-radius: 21px;
+  border-bottom-left-radius: 21px;
+}
+
+.shoppingCartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  height: 28em;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cartItemMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.cartItemMain .cartItemImage {
+  width: 5.5em;
+  margin-right: 1.5em;
+  display: flex;
+}
+
+.cartItemMain .cartItemImage img {
+  width: 100%;
+}
+
+.cartItemMain .itemDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cartItemMain .itemDescription h4 {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 100;
+}
+
+.cartItemMain .itemDescription p {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 100;
+}
+
+.cartItemPrice {
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  padding-right: 15px;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5em;
+}
+
+.subtotalContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 95%;
+  border-bottom: 4px solid;
+  padding-bottom: 25px;
+}
+
+.subtotalContainer p {
+  font-size: 15px;
+  margin: 12px 0 0;
+}
+
+.subtotalContainer .price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtotalContainer .price p {
+  font-size: 25px;
+  margin: 0;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.totalContainer .totalPrice {
+  font-size: 25px;
+  margin-right: 13em;
+}
+
+.totalContainer .priceTotalContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.totalContainer .priceTotalContainer .priceTotalCurrency {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.totalContainer .priceTotalContainer p {
+  font-size: 25px;
+}
+
+/* Footer Section */
+#FooterSection a {
+  color: white;
+}
+
+#FooterSection a:visited {
+  color: white;
+}
+
+.LinksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NavLinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.NavLinks a {
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.SocialLinks a {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.SocialLinks svg {
+  width: 35px;
+}
+
+/* Extra Extra small devices (Glaxy Fold, 200px and down) */
+/* TODO Add support for these devices */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #OrderSummary {
+    width: 90%;
+  }
+
+  .headerTitle .headerTitleText svg {
+    width: 22px;
+    margin-left: 15px;
+  }
+
+  .headerTitle .headerTitleText h1 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding-top: 0;
+  }
+
+  .headerTitleText .dropDown svg {
+    width: 17px;
+    padding-top: 9px;
+    margin-left: 4px;
+  }
+
+  .headerTitelPrice .totalPriceCurrency {
+    letter-spacing: 2px;
+    font-size: 10px;
+  }
+
+  .headerTitelPrice .totalPrice {
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding-right: 5px;
+  }
+
+  .cartItem {
+    margin-top: 25px;
+  }
+
+  .cartItemMain .cartItemImage {
+    width: 2.3em;
+  }
+
+  .cartItemMain .itemDescription h4 {
+    font-size: 16px;
+  }
+
+  .cartItem .itemDescription p {
+    font-size: 12px;
+  }
+
+  .cartItemPrice {
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-right: 7px;
+  }
+
+  .subtotalContainer .price p {
+    font-size: 21px;
+  }
+
+  .subtotalContainer p {
+    font-size: 12px;
+  }
+
+  .totalContainer .totalPrice {
+    margin-right: 0em;
+    font-size: 25px;
+  }
+
+  .totalContainer .priceTotalContainer .priceTotalCurrency {
+    font-size: 20px;
+  }
+
+  .totalContainer .priceTotalContainer p {
+    font-size: 20px;
+  }
+
+  #CheckoutSection {
+    width: 90%;
+  }
+
+  .returnContainer {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #OrderSummary {
+    width: 90%;
+  }
+
+  .headerTitle .headerTitleText svg {
+    width: 22px;
+    margin-left: 15px;
+  }
+
+  #CheckoutSection {
+    width: 90%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #OrderSummary {
+    width: 40%;
+  }
+
+  #CheckoutSection {
+    width: 40%;
+  }
+}
