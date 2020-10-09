@@ -37,7 +37,6 @@ export const ShopSection: React.FC<Props> = () => {
     <section id="ShopNowSection">
       <h2>SHOP</h2>
       <div className="itemsCollection">
-        {/* Iterativly create an Item Reach child */}
         {items.map((item) => (
           <Item key={item.id} name={item.name} price={item.price} />
         ))}

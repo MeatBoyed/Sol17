@@ -1,0 +1,404 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  color: black;
+  font-family: 'Alata';
+}
+
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+body a:visited {
+  color: black;
+}
+
+/* Navbar Section */
+#NavigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 75px;
+  border-bottom: 2px solid #707070;
+  font-size: 32px;
+}
+
+.LogoIcon {
+  margin-left: 1em;
+  letter-spacing: 7px;
+}
+
+.Pages {
+  font-size: 26px;
+}
+
+.Pages .ShopLink {
+  margin-right: 35px;
+}
+
+.ShoppingCartIcon {
+  margin-right: 1em;
+}
+
+.ShoppingCartIcon svg {
+  width: 40px;
+}
+
+#SingleItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#ItemImageViewerAndDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4em;
+}
+
+#ImageViewer {
+  margin-right: 3em;
+  width: 37%;
+}
+
+/* Item Description Viewer */
+#DescriptionViewer {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: flex-start;
+  font-size: 25px;
+  font-weight: 100;
+  width: 28%;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 0.8em;
+}
+
+.titleContainer h1 {
+  margin: 0;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+.titleContainer p {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 100;
+}
+
+.colourText {
+  margin: 0 0 0.8em 0;
+}
+
+.colourPickerContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.8em;
+}
+
+.colourPickerContainer .colourButton {
+  height: 35px;
+  width: 35px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  margin-right: 1em;
+  align-items: center;
+}
+
+.colourPickerContainer .colourButton .colourButtonInner {
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  border: 0;
+}
+
+.colourPickerContainer .colourButton .colourButtonInner:hover {
+  cursor: pointer;
+}
+
+.colourButtonInner.black {
+  background: #212121;
+}
+
+.colourButtonInner.white {
+  background: palegoldenrod;
+}
+
+.colourButtonInner.red {
+  background: red;
+}
+
+.sizePicker {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.8em;
+}
+
+.sizePicker .sizeButton {
+  font-size: 20px;
+  height: 40px;
+  display: flex;
+  width: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 2.4px solid #212121;
+  border-radius: 6px;
+  margin-right: 15px;
+}
+
+.sizePicker .sizeButton:hover {
+  cursor: pointer;
+}
+
+.AddToCartButton {
+  background: #212121;
+  color: white;
+  width: 100%;
+  border: 0;
+  height: 45px;
+  border-radius: 25px;
+  font-size: 20px;
+  margin-bottom: 0.8em;
+}
+
+.AddToCartButton:hover {
+  cursor: pointer;
+}
+
+.infoDropDown {
+  margin-top: 0.5em;
+}
+
+.itemDescription {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8em;
+}
+
+.itemDescription .itemDescriptionText {
+  border-bottom: 3px solid #212121;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
+}
+
+.itemDescription p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.itemDescription svg {
+  margin-right: 5px;
+  width: 20px;
+}
+
+.itemDescription svg:hover {
+  cursor: pointer;
+}
+
+.itemDescription .dropDownText {
+  width: 100%;
+  font-size: 16px;
+  padding-top: 7px;
+}
+
+#Recomended {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10em;
+}
+
+#Recomended h3 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 100;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 5px solid #212121;
+  margin-top: 3em;
+}
+
+.itemRec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 12em;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
+
+.itemRec:hover {
+  cursor: pointer;
+}
+
+.itemRec img {
+  width: 100%;
+}
+
+/* Footer Section */
+#FooterSection {
+  display: flex;
+  justify-content: space-evenly;
+  height: 15.625em;
+  color: white;
+  background: #212121;
+  height: 9.625em;
+  margin-top: 10em;
+}
+
+#FooterSection a {
+  color: white;
+}
+
+#FooterSection a:visited {
+  color: white;
+}
+
+.LinksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NavLinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.NavLinks a {
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.SocialLinks a {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.SocialLinks svg {
+  width: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  #ItemImageViewerAndDetail {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  #ImageViewer {
+    margin-right: 0;
+    width: 80%;
+  }
+
+  #DescriptionViewer {
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  .titleContainer h1 {
+    font-size: 45px;
+  }
+
+  .titleContainer {
+    align-items: center;
+  }
+
+  .colourText {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .colourPickerContainer,
+  .sizePicker {
+    justify-content: center;
+  }
+
+  .sizePicker .sizeButton {
+    margin-right: 5px;
+  }
+
+  .itemContainer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1102px) {
+  #SingelItem {
+    margin-top: 3em;
+  }
+
+  #ItemImageViewerAndDetail {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  #ImageViewer {
+    margin-right: 0;
+    width: 80%;
+  }
+
+  #DescriptionViewer {
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  .titleContainer h1 {
+    font-size: 36px;
+  }
+
+  .titleContainer {
+    align-items: center;
+  }
+
+  .colourText {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .colourPickerContainer,
+  .sizePicker {
+    justify-content: center;
+  }
+
+  .sizePicker .sizeButton {
+    margin-right: 5px;
+  }
+
+  .itemContainer {
+    width: 80%;
+  }
+}
