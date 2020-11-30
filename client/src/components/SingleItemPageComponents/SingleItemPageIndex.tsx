@@ -29,3 +29,5 @@ export const SingleItemPageIndex: React.FC<Props> = () => {
     </React.Fragment>
   );
 };
+
+export default SingleItemPageIndex

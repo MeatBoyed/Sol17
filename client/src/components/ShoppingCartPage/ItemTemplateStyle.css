@@ -1,0 +1,18 @@
+.item {
+  display: flex;
+  flex-direction: row;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.itemInfo img {
+  width: 40%;
+}
+
+.itemInfoText {
+  display: flex;
+  flex-direction: row;
+}
