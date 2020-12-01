@@ -4,24 +4,63 @@ import InstagramIcon from '../img/instagramIcon.svg';
 import TwitterIcon from '../img/twitterIcon.svg';
 import FacebookIcon from '../img/facebookIcon.svg';
 
+const styles = {
+  FooterSection: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    color: "white",
+    background: "#212121",
+    height: "9.625em",
+    marginTop: "10em"
+  },
+  LinksContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    alignItems: "center",
+  } as React.CSSProperties,
+  NavLinks: {
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    textAlign: "center",
+  } as React.CSSProperties,
+  NavLinksA: {
+    marginRight: "15px",
+    marginLeft: "15px",
+    fontSize: "20px",
+    fontWeight: 400,
+    letterSpacing: "5px",
+  },
+  SocialLinksA: {
+    marginLeft: "20px",
+    marginRight: "20px",
+  },
+  SocialLinksSVG: {
+    width: "35px"
+  }
+} 
+
+
 export const FooterSection: React.FC = () => {
   return (
-    <div id="FooterSection">
-      <div className="LinksContainer">
-        <div className="NavLinks">
-          <a href="#ShopNowSection">Shop</a>
-          <a href="#AboutSection">About</a>
-          <a href="#">Support</a>
-          <a href="#">Sizing-Chart</a>
+    <div id="FooterSection" style={styles.FooterSection}>
+      <div className="LinksContainer" style={styles.LinksContainer}>
+        <div className="NavLinks" style={styles.NavLinks} >
+          <a href="#ShopNowSection" style={styles.NavLinksA} >Shop</a>
+          <a href="#AboutSection" style={styles.NavLinksA} >About</a>
+          <a href="#" style={styles.NavLinksA} >Support</a>
+          <a href="#" style={styles.NavLinksA} >Sizing-Chart</a>
         </div>
         <div className="SocialLinks">
-          <a href="https://instagram.com/">
+          <a href="https://instagram.com/" style={styles.SocialLinksA} >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
               width="59.473"
               height="59.472"
               viewBox="0 0 59.473 59.472"
+              style={styles.SocialLinksSVG}
             >
               <defs>
                 <linearGradient
@@ -47,7 +86,7 @@ export const FooterSection: React.FC = () => {
               />
             </svg>
           </a>
-          <a href="https://twiter.com/meatboyed">
+          <a href="https://twiter.com/meatboyed" style={styles.SocialLinksA} >
             <svg xmlns="http://www.w3.org/2000/svg" width="59.473" height="59.477" viewBox="0 0 59.473 59.477">
               <path
                 id="twitter-color"
@@ -55,11 +94,12 @@ export const FooterSection: React.FC = () => {
                 transform="translate(-1 -31279.994)"
                 fill="#1da1f2"
                 fillRule="evenodd"
+                style={styles.SocialLinksSVG}
               />
             </svg>
           </a>
-          <a href="https://facebook.com">
-            <svg xmlns="http://www.w3.org/2000/svg" width="59.473" height="59.472" viewBox="0 0 59.473 59.472">
+          <a href="https://facebook.com" style={styles.SocialLinksA} >
+            <svg xmlns="http://www.w3.org/2000/svg" width="59.473" height="59.472" viewBox="0 0 59.473 59.472" style={styles.SocialLinksSVG}>
               <path
                 id="facebook-round-line-color"
                 d="M29.736,0A29.736,29.736,0,1,1,8.71,8.71,29.643,29.643,0,0,1,29.736,0ZM32.68,19.923h4.906V14.035H32.68A6.877,6.877,0,0,0,25.812,20.9v2.944H21.886v5.889h3.925v15.7H31.7v-15.7h4.906l.981-5.888H31.7V20.9a.994.994,0,0,1,.981-.981h0Zm16.08-9.211a26.905,26.905,0,1,0,7.88,19.024A26.82,26.82,0,0,0,48.761,10.712Z"

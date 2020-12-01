@@ -27,37 +27,6 @@ a {
   padding: 0;
 }
 
-#NavigationBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 75px;
-  border-bottom: 2px solid #707070;
-  font-size: 32px;
-}
-
-.LogoIcon {
-  margin-left: 1em;
-  letter-spacing: 7px;
-}
-
-.Pages {
-  font-size: 26px;
-}
-
-.Pages .ShopLink {
-  margin-right: 35px;
-}
-
-.ShoppingCartIcon {
-  margin-right: 1em;
-}
-
-.ShoppingCartIcon svg {
-  width: 40px;
-}
-
 #BannerSection {
   width: 100%;
   height: 65vh;
@@ -193,50 +162,6 @@ a {
 .TextImageContainer p {
   margin: 0 0 0 35px;
   font-size: 17px;
-}
-
-#FooterSection {
-  display: flex;
-  justify-content: space-evenly;
-  height: 15.625em;
-  color: white;
-  background: #212121;
-  height: 9.625em;
-  margin-top: 10em;
-}
-
-#FooterSection a:visited {
-  color: white;
-}
-
-.LinksContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.NavLinks {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-}
-
-.NavLinks a {
-  margin-right: 15px;
-  margin-left: 15px;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 5px;
-}
-
-.SocialLinks a {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.SocialLinks svg {
-  width: 35px;
 }
 
 /* Extra small devices (phones, 600px and down) */

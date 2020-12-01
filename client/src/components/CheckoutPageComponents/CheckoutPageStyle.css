@@ -404,45 +404,6 @@ body a:visited {
   font-size: 25px;
 }
 
-/* Footer Section */
-#FooterSection a {
-  color: white;
-}
-
-#FooterSection a:visited {
-  color: white;
-}
-
-.LinksContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.NavLinks {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-}
-
-.NavLinks a {
-  margin-right: 15px;
-  margin-left: 15px;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 5px;
-}
-
-.SocialLinks a {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.SocialLinks svg {
-  width: 35px;
-}
-
 /* Extra Extra small devices (Glaxy Fold, 200px and down) */
 /* TODO Add support for these devices */
 
