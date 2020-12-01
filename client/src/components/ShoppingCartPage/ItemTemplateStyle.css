@@ -1,6 +1,8 @@
 .item {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .itemInfo {
@@ -9,10 +11,40 @@
 }
 
 .itemInfo img {
-  width: 40%;
+  width: 7em;
 }
 
 .itemInfoText {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 2em;
+}
+
+.itemName {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.SizeandColourInfoCollection {
+  display: flex;
   flex-direction: row;
+  margin: 0;
+}
+
+.itemColour {
+  font-size: 17px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.itemSize {
+  font-size: 17px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.itemPrice {
+  margin: 0;
 }
