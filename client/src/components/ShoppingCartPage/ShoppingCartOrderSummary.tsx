@@ -12,7 +12,7 @@ export const OrderSummary: React.FC<Props> = () => {
                 <p className="subtotalPrice">$5 999.9</p>
             </div>
             <p className="priceInfo">Shipping, taxes, and discount codes calculated at checkout.</p>
-            <button className="checkoutButton">Checkout</button>
+            <button className="checkoutButton"><h5>Checkout</h5></button>
         </div>
     );
 }
