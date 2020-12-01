@@ -10,6 +10,16 @@ export const ItemsCollection: React.FC<Props> = () => {
     return (
         <div className="ItemsCollection">
             <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
         </div>
     );
 }
