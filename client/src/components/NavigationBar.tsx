@@ -18,7 +18,8 @@ const styles = {
     fontSize: "26px"
   },
   ShopLink: {
-    marginRight: "35px"
+    marginRight: "35px",
+    color: "black"
   },
   ShoppingCartIcon: {
     marginRight: "1em"
@@ -41,7 +42,7 @@ export const NavigationBar: React.FC<Props> = () => {
         <a href="#ShopNowSection" className="ShopLink" style={styles.ShopLink}>
           Shop
         </a>
-        <a href="#AboutSection">About</a>
+        <a href="#AboutSection" style={styles.ShopLink}>About</a>
       </div>
       <a href="#" className="ShoppingCartIcon" style={styles.ShoppingCartIcon}>
         <svg xmlns="http://www.w3.org/2000/svg" width="57.355" height={72} viewBox="0 0 57.355 72">

@@ -31,6 +31,7 @@ const styles = {
     fontSize: "20px",
     fontWeight: 400,
     letterSpacing: "5px",
+    color: "white",
   },
   SocialLinksA: {
     marginLeft: "20px",
