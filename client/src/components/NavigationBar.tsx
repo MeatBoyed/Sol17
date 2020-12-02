@@ -15,7 +15,7 @@ const styles = {
     letterSpacing: "7px"
   },
   Pages: {
-    fontSize: "26px"
+    fontSize: "large"
   },
   ShopLink: {
     marginRight: "35px",
