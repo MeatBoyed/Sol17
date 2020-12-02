@@ -91,3 +91,17 @@ a {
   font-weight: 100;
   letter-spacing: 6px;
 }
+
+@media only screen and (max-width: 600px) {
+  .subtotalText {
+    font-size: medium;
+  }
+
+  .subtotalPrice {
+    font-size: medium;
+  }
+
+  .priceInfo {
+    font-size: x-small;
+  }
+}

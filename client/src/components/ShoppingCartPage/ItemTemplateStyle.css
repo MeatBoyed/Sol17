@@ -68,3 +68,40 @@
   margin: 12px 0 0 0;
   padding-top: 6px;
 }
+
+@media only screen and (max-width: 600px) {
+  .itemInfo img {
+    width: 4em;
+  }
+
+  .itemInfoText {
+    margin-left: 1em;
+  }
+
+  .itemName {
+    font-size: medium;
+  }
+
+  .itemColour {
+    font-size: small;
+  }
+
+  .itemSize {
+    font-size: small;
+  }
+
+  .itemPrice {
+    font-size: small;
+  }
+
+  .itemQuantity {
+    font-size: small;
+  }
+
+  .itemRemovebtn {
+    font-size: small;
+  }
+}
+
+@media only screen and (max-width: 1102px) {
+}
