@@ -12,12 +12,14 @@ import { FooterSection } from '../FooterSection';
 
 export const HomePageIndex: React.FC = () => {
   return (
-    <div id="HomePageCollection">
+    <React.Fragment>
       <NavigationBar />
       <BannerComponent />
       <ShopSection />
       <AboutSection />
       <FooterSection />
-    </div>
+    </React.Fragment>
   );
 };
+
+export default HomePageIndex

@@ -1,0 +1,112 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid;
+  padding-bottom: 5px;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.itemInfo img {
+  width: 7em;
+}
+
+.itemInfoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 2em;
+}
+
+.itemName {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin: 0;
+}
+.SizeandColourInfoCollection {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.itemColour {
+  font-size: 17px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.itemSize {
+  font-size: 17px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.itemPrice {
+  margin: 0;
+}
+
+.itemQuantityandRemove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemQuantity {
+  margin: 0;
+  font-size: 17px;
+}
+
+.itemRemovebtn {
+  border-top: 5px solid;
+  margin: 12px 0 0 0;
+  padding-top: 6px;
+}
+
+.itemInfo img:hover,
+.itemRemovebtn:hover,
+.itemName:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .itemInfo img {
+    width: 4em;
+  }
+
+  .itemInfoText {
+    margin-left: 1em;
+  }
+
+  .itemName {
+    font-size: medium;
+  }
+
+  .itemColour {
+    font-size: small;
+  }
+
+  .itemSize {
+    font-size: small;
+  }
+
+  .itemPrice {
+    font-size: small;
+  }
+
+  .itemQuantity {
+    font-size: small;
+  }
+
+  .itemRemovebtn {
+    font-size: small;
+  }
+}
+
+@media only screen and (max-width: 1102px) {
+}
