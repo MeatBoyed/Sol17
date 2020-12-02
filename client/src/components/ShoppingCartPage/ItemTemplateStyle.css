@@ -29,7 +29,6 @@
   letter-spacing: 3px;
   margin: 0;
 }
-
 .SizeandColourInfoCollection {
   display: flex;
   flex-direction: row;
@@ -67,6 +66,12 @@
   border-top: 5px solid;
   margin: 12px 0 0 0;
   padding-top: 6px;
+}
+
+.itemInfo img:hover,
+.itemRemovebtn:hover,
+.itemName:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

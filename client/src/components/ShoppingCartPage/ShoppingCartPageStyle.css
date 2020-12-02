@@ -85,6 +85,10 @@ a {
   align-items: center;
 }
 
+.checkoutButton:hover {
+  cursor: pointer;
+}
+
 .checkoutButton h5 {
   text-align: center;
   font-size: 14px;
