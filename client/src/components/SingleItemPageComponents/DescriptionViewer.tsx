@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { firestore } from "../../firebaseConfig"
 
 // Drop Down
 import { DropDown } from './DropDown';
@@ -9,10 +10,24 @@ export const DescriptionViewer: React.FC<Props> = () => {
   const dummyText =
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur est porro perspiciatis recusandae temporibus, suscipit ducimus nobis alias amet animi nemo dolores soluta? Fuga facilis minima dicta reiciendis ipsa similique?';
 
+
+    const [items, setItems] = useState<any>([])
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const data = await firestore.collection("Items").get()
+        setItems(data.docs.map(doc => doc.data()))
+      }
+      fetchData()
+    }, [])
+  
+  
+    console.log(items)
+
   return (
     <div id="DescriptionViewer">
       <div className="titleContainer">
-        <h1>The Nike 270</h1>
+        <h1>{}</h1>
         <p>$5 999.99</p>
       </div>
       <p className="colourText">Colour - Red</p>
