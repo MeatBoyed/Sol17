@@ -13,9 +13,11 @@ export const Item: React.FC<Props> = () => {
     return (
         <div className="item">
             <div className="itemInfo">
-                <img src={img1} alt=""/>
+                <a href="/item/11"><img src={img1} alt=""/>
+                </a>
                 <div className="itemInfoText">
-                    <p className="itemName">Nike 270</p>
+                    <a href="/item/11"><p className="itemName">Nike 270</p>
+                    </a>
                     <div className="SizeandColourInfoCollection">
                         <p className="itemColour">Black / </p>
                         <p className="itemSize">XXL</p>

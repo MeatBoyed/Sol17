@@ -95,6 +95,10 @@ a {
   width: 100%;
 }
 
+.item .itemImage img:hover {
+  cursor: pointer;
+}
+
 .itemInfoContainer {
   display: flex;
   flex-direction: column;
@@ -106,6 +110,10 @@ a {
   font-size: 29px;
   letter-spacing: 6px;
   margin: 0 0 20px 0;
+}
+
+.itemInfoContainer .itemInfoTitle:hover {
+  cursor: pointer;
 }
 
 .itemInfoContainer .itemInfoPrice {
