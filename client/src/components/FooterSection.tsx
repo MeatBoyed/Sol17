@@ -48,8 +48,8 @@ export const FooterSection: React.FC = () => {
     <div id="FooterSection" style={styles.FooterSection}>
       <div className="LinksContainer" style={styles.LinksContainer}>
         <div className="NavLinks" style={styles.NavLinks} >
-          <a href="#ShopNowSection" style={styles.NavLinksA} >Shop</a>
-          <a href="#AboutSection" style={styles.NavLinksA} >About</a>
+          <a href="/#ShopNowSection" style={styles.NavLinksA} >Shop</a>
+          <a href="/#AboutSection" style={styles.NavLinksA} >About</a>
           <a href="#" style={styles.NavLinksA} >Support</a>
           <a href="#" style={styles.NavLinksA} >Sizing-Chart</a>
         </div>

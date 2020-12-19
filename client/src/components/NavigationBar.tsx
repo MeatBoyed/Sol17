@@ -1,52 +1,54 @@
 import React from 'react';
 
-const styles = {
-  NavigationBarStyles: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
-    height: "75px",
-    borderBottom: "2px solid #707070",
-    fontSize: "32px",
-  },
-  LogoIcon: {
-    marginLeft: "1em",
-    letterSpacing: "7px"
-  },
-  Pages: {
-    fontSize: "26px"
-  },
-  ShopLink: {
-    marginRight: "35px",
-    color: "black"
-  },
-  ShoppingCartIcon: {
-    marginRight: "1em"
-  },
-  ShoppingCartIconSVG: {
-    width: "40px"
-  }
-}
+import "./NavigationBarandFooterSectionStyles.css"
+
+// const styles = {
+//   NavigationBarStyles: {
+//     display: "flex",
+//     alignItems: "center",
+//     justifyContent: "space-between",
+//     width: "100%",
+//     height: "75px",
+//     borderBottom: "2px solid #707070",
+//     fontSize: "32px",
+//   },
+//   LogoIcon: {
+//     marginLeft: "1em",
+//     letterSpacing: "7px"
+//   },
+//   Pages: {
+//     fontSize: "26px"
+//   },
+//   ShopLink: {
+//     marginRight: "35px",
+//     color: "black"
+//   },
+//   ShoppingCartIcon: {
+//     marginRight: "1em"
+//   },
+//   ShoppingCartIconSVG: {
+//     width: "40px"
+//   }
+// }
 
 
 interface Props {}
 
 export const NavigationBar: React.FC<Props> = () => {
   return (
-    <nav id="NavigationBar" style={styles.NavigationBarStyles}>
-      <a href="#" className="LogoIcon" style={styles.LogoIcon}>
+    <nav id="NavigationBar" >
+      <a href="/" className="LogoIcon" >
         Sol - 17
       </a>
-      <div className="Pages" style={styles.Pages}>
-        <a href="#ShopNowSection" className="ShopLink" style={styles.ShopLink}>
+      <div className="Pages" >
+        <a href="/#ShopNowSection" className="ShopLink" >
           Shop
         </a>
-        <a href="#AboutSection" style={styles.ShopLink}>About</a>
+        <a href="/#AboutSection" >About</a>
       </div>
-      <a href="#" className="ShoppingCartIcon" style={styles.ShoppingCartIcon}>
+      <a href="/ShoppingCart" className="ShoppingCartIcon" >
         <svg xmlns="http://www.w3.org/2000/svg" width="57.355" height={72} viewBox="0 0 57.355 72">
-      <g id="Group_9" data-name="Group 9" transform="translate(-1782 -40)" style={styles.ShoppingCartIconSVG}>
+      <g id="Group_9" data-name="Group 9" transform="translate(-1782 -40)" >
         <text
           id="_5"
           data-name={5}
