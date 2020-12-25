@@ -1,11 +1,10 @@
 import React from 'react';
 
-import NikeAirImage from '../../img/nikeAir.jpg';
 
 interface Props {
   name: string;
   price: number;
-  image?: any;
+  image: string;
   url: string;
 }
 
@@ -14,7 +13,7 @@ export const Item: React.FC<Props> = ({ name, price, image, url }) => {
     <div className="item" key="1">
       <div className="itemImage">
         <a href={url}>
-          <img src={NikeAirImage} alt="" />
+          <img src={image} alt="" />
         </a>
       </div>
       <div className="itemInfoContainer">

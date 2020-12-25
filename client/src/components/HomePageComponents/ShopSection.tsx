@@ -9,6 +9,7 @@ interface Item {
   id: string,
   name: string,
   price: number,
+  image: string
 }
 
 export const ShopSection: React.FC<Props> = () => {
@@ -24,6 +25,7 @@ export const ShopSection: React.FC<Props> = () => {
           id: doc.id,
           name: doc.data().name,
           price: doc.data().price,
+          image: doc.data().mainThumbnail
         }
       ])
     })
@@ -39,7 +41,7 @@ export const ShopSection: React.FC<Props> = () => {
       <h2>SHOP</h2>
       <div className="itemsCollection">
         {items.map((item) => (
-          <Item key={item.id} name={item.name} price={item.price} url={`/item/${item.id}`} />
+          <Item key={item.id} name={item.name} price={item.price} url={`/item/${item.id}`} image={item.image} />
         ))}
       </div>
     </section>
