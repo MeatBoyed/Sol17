@@ -23,6 +23,7 @@ export const DescriptionViewer: React.FC<Props> = () => {
   
   
     console.log(items)
+    console.log(items[0])
 
   return (
     <div id="DescriptionViewer">
