@@ -13,13 +13,14 @@ function App() {
   return (
     <BrowserRouter>
       <React.Suspense fallback={<div>Loading Beep boop!......</div>}>
-      <Switch>
-        <Route exact path="/" component={HomePageIndex} />
-        <Route exact path="/item/:id" component={SingleItemPageIndex} />
-        <Route exact path="/shoppingcart" component={ShoppingCart} />
-        <Route exact path="/checkout" component={CheckoutPageIndex} />
-        <Route path="" render={() => <h1>404 Not Found</h1>} />
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={HomePageIndex} />
+          <Route exact path="/item/:id" component={SingleItemPageIndex} />
+          <Route exact path="/shoppingcart" component={ShoppingCart} />
+          <Route exact path="/checkout" component={CheckoutPageIndex} />
+          <Route exact path="/404" render={() => <h1>404 NOT FOUND</h1>} />
+          <Route path="" render={() => <h1>404 Not Found</h1>} />
+        </Switch>
       </React.Suspense>
     </BrowserRouter>
   );

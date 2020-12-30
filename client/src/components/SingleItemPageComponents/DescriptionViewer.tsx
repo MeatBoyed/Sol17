@@ -7,28 +7,12 @@ import { DropDown } from './DropDown';
 interface Props {}
 
 export const DescriptionViewer: React.FC<Props> = () => {
-  const dummyText =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur est porro perspiciatis recusandae temporibus, suscipit ducimus nobis alias amet animi nemo dolores soluta? Fuga facilis minima dicta reiciendis ipsa similique?';
-
-
-    const [items, setItems] = useState<any>([])
-
-    useEffect(() => {
-      const fetchData = async () => {
-        const data = await firestore.collection("Items").get()
-        setItems(data.docs.map(doc => doc.data()))
-      }
-      fetchData()
-    }, [])
-  
-  
-    console.log(items)
-    console.log(items[0])
+  const dummyText = "lorem asdasjkhsdjfh sajkdfhj  dsfhjdf  asdhjsad  ahsdjsdh ashdjad "
 
   return (
     <div id="DescriptionViewer">
       <div className="titleContainer">
-        <h1>{}</h1>
+        <h1>Nike 270</h1>
         <p>$5 999.99</p>
       </div>
       <p className="colourText">Colour - Red</p>
