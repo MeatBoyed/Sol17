@@ -4,16 +4,21 @@ import { firestore } from "../../firebaseConfig"
 // Drop Down
 import { DropDown } from './DropDown';
 
-interface Props {}
+interface Props {
+  id: string,
+  name: string,
+  price: number,
+  description: string,
+  colours: []
+}
 
-export const DescriptionViewer: React.FC<Props> = () => {
-  const dummyText = "lorem asdasjkhsdjfh sajkdfhj  dsfhjdf  asdhjsad  ahsdjsdh ashdjad "
+export const DescriptionViewer: React.FC<Props> = ({ id, name, price, description, colours }) => {
 
   return (
     <div id="DescriptionViewer">
       <div className="titleContainer">
-        <h1>Nike 270</h1>
-        <p>$5 999.99</p>
+        <h1>{ name }</h1>
+        <p>{ price }</p>
       </div>
       <p className="colourText">Colour - Red</p>
       <div className="colourPickerContainer">
@@ -39,9 +44,9 @@ export const DescriptionViewer: React.FC<Props> = () => {
       </div>
       <button className="AddToCartButton">Add To Cart</button>
       <div className="infoDropdown">
-        <DropDown title={'Description'} text={dummyText} />
-        <DropDown title={'Size Chart'} text={dummyText} />
-        <DropDown title={'Shipping & Returns'} text={dummyText} />
+        <DropDown title={'Description'} text={description} />
+        <DropDown title={'Size Chart'} text={description} />
+        <DropDown title={'Shipping & Returns'} text={description} />
       </div>
     </div>
   );

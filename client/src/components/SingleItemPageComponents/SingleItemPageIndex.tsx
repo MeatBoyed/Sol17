@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { RouteComponentProps } from "react-router"
+import { match, RouteComponentProps } from "react-router"
 import { Redirect } from 'react-router-dom'
 import { firestore } from "../../firebaseConfig"
 
@@ -24,7 +24,7 @@ interface LoadingAndValidation {
 }
 
 interface Item {
-  id: string,
+  id: string ,
   name: string,
   price: number,
   description: string,
@@ -35,11 +35,10 @@ interface Item {
 export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
 
   const [loadingAndValidation, setLoadingAndValidation] = useState<LoadingAndValidation>({ isLoading: true, isValid: false})
-  const [itemData, setItemData] = useState<Item>()
+  const [itemData, setItemData] = useState<Item>({id: "id123", name: "itemName", price: 1234, description: "Description", mainThumbnail: "www.host", colours: []})
 
   const fetchData = async () => {
     const item = await firestore.collection("Items").doc(match.params.id).get()
-
 
     if(!item.exists) {
       setLoadingAndValidation({ isLoading: false, isValid: false})
@@ -71,7 +70,7 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
             {loadingAndValidation.isValid ?
               <div id="ItemImageViewerAndDetail">
                 <ImageViewer />
-                <DescriptionViewer />
+                <DescriptionViewer id={itemData.id} name={itemData.name} price={itemData.price} description={itemData.description} colours={itemData.colours} />
               </div>
               : <Redirect to="/404" /> 
             }
