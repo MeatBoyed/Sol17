@@ -39,16 +39,20 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
 
   const fetchData = async () => {
     const item = await firestore.collection("Items").doc(match.params.id).get()
-    const itemRawData = item.data()
 
 
     if(!item.exists) {
       setLoadingAndValidation({ isLoading: false, isValid: false})
-      console.log("Not Valid and done loading")
     }else {
       setLoadingAndValidation({ isLoading: false, isValid: true})
-      console.log("Valid and done loading")
-      console.log(itemRawData)
+      setItemData({
+        id: item.id,
+        name: item.data()!.name,
+        price: item.data()!.price,
+        description: item.data()!.description,
+        mainThumbnail: item.data()!.mainThumbnail,
+        colours: item.data()!.colours,
+      })
     }
   }
 
