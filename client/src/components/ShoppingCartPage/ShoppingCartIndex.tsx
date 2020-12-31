@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { } from 'react';
 
 // Import Components
 import { NavigationBar } from '../NavigationBar'
@@ -12,7 +12,7 @@ import './ShoppingCartPageStyle.css'
 interface Props {
 }
 
-export const ShoppingCart: React.FC<Props> = ({  }) => {
+export const ShoppingCart: React.FC<Props> = () => {
 
   return (
     <React.Fragment>
