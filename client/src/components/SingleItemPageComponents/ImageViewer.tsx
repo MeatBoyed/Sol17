@@ -6,33 +6,12 @@ import ImageGallery from 'react-image-gallery';
 // Style import for react-image-gallery
 import 'react-image-gallery/styles/css/image-gallery.css';
 
-//  Import images with Lazyload
-import ImgOne from '../../img/img1.jpg';
-import ImgTwo from '../../img/img2.jpg';
-import ImgThree from '../../img/img3.jpg';
-import ImgFour from '../../img/img4.jpg';
+interface Props {
+  images: []
+}
 
-interface Props {}
 
-export const ImageViewer: React.FC<Props> = () => {
-  const images = [
-    {
-      original: ImgOne,
-      thumbnail: ImgOne,
-    },
-    {
-      original: ImgTwo,
-      thumbnail: ImgTwo,
-    },
-    {
-      original: ImgThree,
-      thumbnail: ImgThree,
-    },
-    {
-      original: ImgFour,
-      thumbnail: ImgFour,
-    },
-  ];
+export const ImageViewer: React.FC<Props> = ({ images}) => {
 
   const [isMobile, setIsMobile] = useState(true);
 

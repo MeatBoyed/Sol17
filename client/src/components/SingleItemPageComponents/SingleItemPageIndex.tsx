@@ -28,14 +28,14 @@ interface Item {
   name: string,
   price: number,
   description: string,
-  mainThumbnail: string,
+  images: [],
   colours: [],
 }
 
 export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
 
   const [loadingAndValidation, setLoadingAndValidation] = useState<LoadingAndValidation>({ isLoading: true, isValid: false})
-  const [itemData, setItemData] = useState<Item>({id: "id123", name: "itemName", price: 1234, description: "Description", mainThumbnail: "www.host", colours: []})
+  const [itemData, setItemData] = useState<Item>({id: "id123", name: "itemName", price: 1234, description: "Description",images: [], colours: []})
 
   const fetchData = async () => {
     const item = await firestore.collection("Items").doc(match.params.id).get()
@@ -49,7 +49,7 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
         name: item.data()!.name,
         price: item.data()!.price,
         description: item.data()!.description,
-        mainThumbnail: item.data()!.mainThumbnail,
+        images: item.data()!.images,
         colours: item.data()!.colours,
       })
     }
@@ -69,7 +69,7 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
           <React.Fragment>
             {loadingAndValidation.isValid ?
               <div id="ItemImageViewerAndDetail">
-                <ImageViewer />
+                <ImageViewer images={itemData.images} />
                 <DescriptionViewer id={itemData.id} name={itemData.name} price={itemData.price} description={itemData.description} colours={itemData.colours} />
               </div>
               : <Redirect to="/404" /> 
