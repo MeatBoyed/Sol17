@@ -13,7 +13,7 @@ export const OrderSummary: React.FC<Props> = () => {
             </div>
             <p className="priceInfo">Shipping, taxes, and discount codes calculated at checkout.</p>
             <button className="checkoutButton">
-                <a>
+                <a href="/checkout">
                     <h5 >Checkout</h5>
                 </a>
             </button>

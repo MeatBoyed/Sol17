@@ -35,7 +35,6 @@ export const ShopSection: React.FC<Props> = () => {
     getItems()
   }, [])
 
-  console.log(items)
   return (
     <section id="ShopNowSection">
       <h2>SHOP</h2>

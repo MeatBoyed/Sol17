@@ -1,9 +1,5 @@
 import React from 'react';
 
-import InstagramIcon from '../img/instagramIcon.svg';
-import TwitterIcon from '../img/twitterIcon.svg';
-import FacebookIcon from '../img/facebookIcon.svg';
-
 const styles = {
   FooterSection: {
     display: "flex",

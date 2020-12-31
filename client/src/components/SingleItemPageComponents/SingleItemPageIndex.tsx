@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { match, RouteComponentProps } from "react-router"
+import { RouteComponentProps } from "react-router"
 import { Redirect } from 'react-router-dom'
 import { firestore } from "../../firebaseConfig"
 
@@ -57,7 +57,7 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
 
   useEffect(() => {
     fetchData()
-  }, [])
+  })
 
   return (
     <React.Fragment>
