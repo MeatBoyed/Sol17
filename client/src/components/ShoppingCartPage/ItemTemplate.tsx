@@ -1,6 +1,6 @@
 import React from 'react'
 
-import img1 from '../../img/img1.jpg'
+// import img1 from '../../img/img1.jpg'
 
 // Style Sheet
 import './ItemTemplateStyle.css'
@@ -13,7 +13,7 @@ export const Item: React.FC<Props> = () => {
     return (
         <div className="item">
             <div className="itemInfo">
-                <a href="/item/11"><img src={img1} alt=""/>
+                <a href="/item/11"><img src={""} alt=""/>
                 </a>
                 <div className="itemInfoText">
                     <a href="/item/11"><p className="itemName">Nike 270</p>

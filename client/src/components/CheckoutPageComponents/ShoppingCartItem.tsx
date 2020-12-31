@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Import Item TEMP
-import NikeAirImage from '../../img/nikeAir.jpg';
+// import NikeAirImage from '../../img/nikeAir.jpg';
 
 interface Props {}
 
@@ -10,7 +10,7 @@ export const ShoppingCartItem: React.FC<Props> = () => {
     <div className="cartItem">
       <div className="cartItemMain">
         <div className="cartItemImage">
-          <img src={NikeAirImage} alt="" />
+          <img src={""} alt="" />
           <div className="quantityIcon">
             <svg xmlns="http://www.w3.org/2000/svg" width={22} height={22} viewBox="0 0 27 27">
               <g id="Group_11" data-name="Group 11" transform="translate(-1466 -17)">
