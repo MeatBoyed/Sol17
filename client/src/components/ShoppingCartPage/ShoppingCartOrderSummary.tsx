@@ -1,8 +1,6 @@
 import React from 'react'
 
-interface Props {
-
-}
+interface Props {}
 
 export const OrderSummary: React.FC<Props> = () => {
     return (
