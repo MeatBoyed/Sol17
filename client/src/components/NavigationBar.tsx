@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ContextType, useContext } from 'react';
+import { ShoppingCartContext } from "./ShoppingCartContext"
 
 import "./NavigationBarandFooterSectionStyles.css"
 
@@ -34,7 +35,13 @@ import "./NavigationBarandFooterSectionStyles.css"
 
 interface Props {}
 
-export const NavigationBar: React.FC<Props> = () => {
+interface IShoppingCart {
+  amount: number
+}
+
+export const NavigationBar: React.FC = () => {
+
+
   return (
     <nav id="NavigationBar" >
       <a href="/" className="LogoIcon" >
@@ -60,7 +67,7 @@ export const NavigationBar: React.FC<Props> = () => {
         >
           <tspan x="0" y="0" textAnchor="middle">
             {/* Add Amount variable here */}
-            {23}
+            {}
           </tspan>
         </text>
         <g id="basket" transform="translate(1782 68)">
