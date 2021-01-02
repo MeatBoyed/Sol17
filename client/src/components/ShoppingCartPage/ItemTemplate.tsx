@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ShoppingCartContext } from "../ShoppingCartContext"
 
 // import img1 from '../../img/img1.jpg'
 
@@ -7,14 +8,16 @@ import './ItemTemplateStyle.css'
 
 interface Props {
     index: number
-    id: string,
     name: string,
     price: number,
     colour: string,
     size: "xs" | "s" | "m" | "l" | "xl" | "xxl"
 }
 
-export const Item: React.FC<Props> = ({ index, id, name, price, colour, size }) => {
+export const Item: React.FC<Props> = ({ index, name, price, colour, size }) => {
+
+    const { RemoveFromShoppingCart } = useContext(ShoppingCartContext)
+
     return (
         <div className="item">
             <div className="itemInfo">
@@ -32,7 +35,7 @@ export const Item: React.FC<Props> = ({ index, id, name, price, colour, size }) 
             </div>
             <div className="itemQuantityandRemove">
                 <p className="itemQuantity">15</p>
-                <p className="itemRemovebtn">Remove</p>
+                <p className="itemRemovebtn" onClick={() => RemoveFromShoppingCart(index) }>Remove</p>
             </div>
         </div>
     );

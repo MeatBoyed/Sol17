@@ -1,4 +1,5 @@
 import React, { useState, useEffect, createContext} from 'react'
+import { ShopSection } from './HomePageComponents/ShopSection'
 
 export interface ShoppingCartModel {
     id: string,
@@ -33,9 +34,24 @@ export const ShoppingCartContextProvider: React.FC<React.ReactNode> = ({ childre
     localStorage.setItem("Sol17ShoppingCart", JSON.stringify(newCart))
   }
 
+  const RemoveFromShoppingCart = (position: number) => {
+    // Removing item from cart and creating a new Cart
+    shoppingCart.splice(position, 1)
+    const newCart = shoppingCart
+    setShoppingCart(newCart)
+
+    console.log(shoppingCart)
+
+    // Updating localStorage
+    localStorage.setItem("Sol17ShoppingCart", JSON.stringify(newCart))
+    console.log("Updated remove")
+
+    window.location.reload()
+
+  }
 
     return (
-        <ShoppingCartContext.Provider value={{ shoppingCart, AddToShoppingCart}} >
+        <ShoppingCartContext.Provider value={{ shoppingCart, AddToShoppingCart, RemoveFromShoppingCart }} >
             { children }
         </ShoppingCartContext.Provider>
     );
