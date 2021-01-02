@@ -4,9 +4,6 @@ import { ShoppingCartContext, ShoppingCartModel } from "../ShoppingCartContext"
 import { Item } from './ItemTemplate'
 
 export const ItemsCollection: React.FC = () => {
-
-    // While component maps over items in ShoppingCartContxt
-    // Sum all the prices to get a total of all the items in the current cart
     
     const { shoppingCart } = useContext(ShoppingCartContext)
 
