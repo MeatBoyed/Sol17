@@ -1,39 +1,7 @@
-import React, { ContextType, useContext } from 'react';
+import React, { useContext } from 'react';
 import { ShoppingCartContext } from "./ShoppingCartContext"
 
 import "./NavigationBarandFooterSectionStyles.css"
-
-// const styles = {
-//   NavigationBarStyles: {
-//     display: "flex",
-//     alignItems: "center",
-//     justifyContent: "space-between",
-//     width: "100%",
-//     height: "75px",
-//     borderBottom: "2px solid #707070",
-//     fontSize: "32px",
-//   },
-//   LogoIcon: {
-//     marginLeft: "1em",
-//     letterSpacing: "7px"
-//   },
-//   Pages: {
-//     fontSize: "26px"
-//   },
-//   ShopLink: {
-//     marginRight: "35px",
-//     color: "black"
-//   },
-//   ShoppingCartIcon: {
-//     marginRight: "1em"
-//   },
-//   ShoppingCartIconSVG: {
-//     width: "40px"
-//   }
-// }
-
-
-interface Props {}
 
 export const NavigationBar: React.FC = () => {
 

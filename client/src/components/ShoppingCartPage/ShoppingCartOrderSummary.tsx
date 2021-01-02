@@ -1,8 +1,7 @@
 import React from 'react'
 
-interface Props {}
 
-export const OrderSummary: React.FC<Props> = () => {
+export const OrderSummary: React.FC = () => {
     return (
         <div className="PriceInfoCollection">
             <div className="SubtotalPrice">

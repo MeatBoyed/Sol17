@@ -1,5 +1,4 @@
 import React, { useState, useEffect, createContext} from 'react'
-import { ShopSection } from './HomePageComponents/ShopSection'
 
 export interface ShoppingCartModel {
     id: string,

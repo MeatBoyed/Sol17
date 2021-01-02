@@ -3,11 +3,8 @@ import { ShoppingCartContext, ShoppingCartModel } from "../ShoppingCartContext"
 
 import { Item } from './ItemTemplate'
 
-interface Props {
 
-}
-
-export const ItemsCollection: React.FC<Props> = () => {
+export const ItemsCollection: React.FC = () => {
     
     const { shoppingCart } = useContext(ShoppingCartContext)
 
@@ -15,7 +12,6 @@ export const ItemsCollection: React.FC<Props> = () => {
 
     return (
         <div className="ItemsCollection">
-            {/* <Item id="as" name= "Nike 270" price={5999} colour="black" size="xxl" /> */}
             {shoppingCart.map((item: ShoppingCartModel, index: number ) => (
                 <Item index={index} id={item.id} name={item.name} price={item.price} colour={item.colour} size={item.size} />
             ))}
