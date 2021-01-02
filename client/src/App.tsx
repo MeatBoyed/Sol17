@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+// ShoppingCart Context
+import { ShoppingCartContextProvider } from "./components/ShoppingCartContext"
+
 
 // Route Component Index compontent
 const HomePageIndex = React.lazy(() => import("./components/HomePageComponents/HomePageIndex"))
@@ -14,9 +17,11 @@ function App() {
     <BrowserRouter>
       <React.Suspense fallback={<div>Loading Beep boop!......</div>}>
         <Switch>
-          <Route exact path="/" component={HomePageIndex} />
-          <Route exact path="/item/:id" component={SingleItemPageIndex} />
-          <Route exact path="/shoppingcart" component={ShoppingCart} />
+          <ShoppingCartContextProvider>
+            <Route exact path="/" component={HomePageIndex} />
+            <Route exact path="/item/:id" component={SingleItemPageIndex} />
+            <Route exact path="/shoppingcart" component={ShoppingCart} />
+          </ShoppingCartContextProvider>
           <Route exact path="/checkout" component={CheckoutPageIndex} />
           <Route exact path="/404" render={() => <h1>404 NOT FOUND</h1>} />
           <Route path="" render={() => <h1>404 Not Found</h1>} />

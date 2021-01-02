@@ -41,6 +41,9 @@ interface IShoppingCart {
 
 export const NavigationBar: React.FC = () => {
 
+  const { shoppingCart } = useContext(ShoppingCartContext)
+
+  let itemsInCart = shoppingCart.length
 
   return (
     <nav id="NavigationBar" >
@@ -67,7 +70,7 @@ export const NavigationBar: React.FC = () => {
         >
           <tspan x="0" y="0" textAnchor="middle">
             {/* Add Amount variable here */}
-            {}
+            {itemsInCart}
           </tspan>
         </text>
         <g id="basket" transform="translate(1782 68)">
