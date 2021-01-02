@@ -2,9 +2,7 @@ import React from 'react';
 
 import NikeAirImage from '../../img/nikeAir.jpg';
 
-interface Props {}
-
-export const RecomendedSection: React.FC<Props> = () => {
+export const RecomendedSection: React.FC = () => {
   return (
     <section id="Recomended">
       <h3>You May Also Like</h3>

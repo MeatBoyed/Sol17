@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import { ShoppingCartContext, ShoppingCartModel } from '../ShoppingCartContext';
 
-// TODO Propegate ShoppingCartItem with Shopping Cart Context hook/state
 
 // import Shopping Cart Item 
 import { ShoppingCartItem } from './ShoppingCartItem'
@@ -9,7 +9,18 @@ interface Props {}
 
 export const OrderSummarySection: React.FC<Props> = () => {
 
+  const { shoppingCart } = useContext(ShoppingCartContext)
+
+  const [totalPrice, setTotalPrice] = useState<number>(0)
   const [showCart, setShowCart] = useState(true)
+
+  useEffect(() => {
+    let total = 0
+    shoppingCart.map((item: ShoppingCartModel) => {
+      total = total + item.price
+    })
+    setTotalPrice(total)
+  })
 
   return (
     <div id="OrderSummary">
@@ -57,18 +68,20 @@ export const OrderSummarySection: React.FC<Props> = () => {
           </div>
         </div>
         <div className="headerTitelPrice">
-          <p className="totalPrice">$5 999.99</p>
+          <p className="totalPrice">${totalPrice}</p>
         </div>
       </div>
       {showCart ? <div className="ShoppingCartContainerMain">
         <div className="shoppingCartContainer">
-          <ShoppingCartItem />
+          {shoppingCart.map((item: ShoppingCartModel) => (
+            <ShoppingCartItem id={item.id} name={item.name} price={item.price} colour={item.colour} size={item.size} />
+          ))}
         </div>
         <div className="priceContainer">
           <div className="subtotalContainer">
             <div className="price">
               <p>Subtotal</p>
-              <p>$5 999.99</p>
+              <p>${totalPrice}</p>
             </div>
             <p>Shipping calculated at next step</p>
           </div>
@@ -76,7 +89,7 @@ export const OrderSummarySection: React.FC<Props> = () => {
             <p className="totalPrice">Total</p>
             <div className="priceTotalContainer">
               <p className="priceTotalCurrency">NAD</p>
-              <p>$5 999.99</p>
+              <p>${totalPrice}</p>
             </div>
           </div>
         </div>

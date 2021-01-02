@@ -9,10 +9,7 @@ import { FooterSection } from '../FooterSection'
 // Style Sheet
 import './ShoppingCartPageStyle.css'
 
-interface Props {
-}
-
-export const ShoppingCart: React.FC<Props> = () => {
+export const ShoppingCart: React.FC = () => {
 
   return (
     <React.Fragment>

@@ -1,25 +1,17 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
+import { ShoppingCartContext, ShoppingCartModel } from "../ShoppingCartContext"
 
 import { Item } from './ItemTemplate'
 
-interface Props {
+export const ItemsCollection: React.FC = () => {
+    
+    const { shoppingCart } = useContext(ShoppingCartContext)
 
-}
-
-export const ItemsCollection: React.FC<Props> = () => {
     return (
         <div className="ItemsCollection">
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
+            {shoppingCart.map((item: ShoppingCartModel, index: number ) => (
+                <Item index={index} id={item.id} name={item.name} price={item.price} colour={item.colour} size={item.size} />
+            ))}
         </div>
     );
 }

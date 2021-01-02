@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { ShoppingCartContext } from "../ShoppingCartContext"
 
 // Drop Down
 import { DropDown } from './DropDown';
@@ -11,11 +12,34 @@ interface Props {
   colours: []
 }
 
+interface ShoppingCartModel {
+  id: string,
+  name: string,
+  price: number,
+  colour: string,
+  size: string
+}
+
 export const DescriptionViewer: React.FC<Props> = ({ id, name, price, description, colours }) => {
 
-  const [colourOption, setColourOption] = useState<String>("black")
-  const [sizeOption, setSizeOption] = useState<String>("m")
+  const { AddToShoppingCart } = useContext(ShoppingCartContext)
 
+  // Make this one whole state object
+  const [colourOption, setColourOption] = useState<string>("black")
+  const [sizeOption, setSizeOption] = useState<string>("m")
+
+
+  const AddToShoppingCartHandler = () => {
+    const item: ShoppingCartModel = {
+      id: id,
+      name: name,
+      price: price,
+      colour: colourOption,
+      size: sizeOption
+    }
+
+    AddToShoppingCart(item)
+  }
 
   return (
     <div id="DescriptionViewer">
@@ -51,7 +75,7 @@ export const DescriptionViewer: React.FC<Props> = ({ id, name, price, descriptio
           XXL
         </button>
       </div>
-      <button className="AddToCartButton">Add To Cart</button>
+      <button className="AddToCartButton" onClick={AddToShoppingCartHandler} >Add To Cart</button>
       <div className="infoDropdown">
         <DropDown title={'Description'} text={description} />
         <DropDown title={'Size Chart'} text={description} />

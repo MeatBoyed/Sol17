@@ -1,40 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShoppingCartContext } from "./ShoppingCartContext"
 
 import "./NavigationBarandFooterSectionStyles.css"
 
-// const styles = {
-//   NavigationBarStyles: {
-//     display: "flex",
-//     alignItems: "center",
-//     justifyContent: "space-between",
-//     width: "100%",
-//     height: "75px",
-//     borderBottom: "2px solid #707070",
-//     fontSize: "32px",
-//   },
-//   LogoIcon: {
-//     marginLeft: "1em",
-//     letterSpacing: "7px"
-//   },
-//   Pages: {
-//     fontSize: "26px"
-//   },
-//   ShopLink: {
-//     marginRight: "35px",
-//     color: "black"
-//   },
-//   ShoppingCartIcon: {
-//     marginRight: "1em"
-//   },
-//   ShoppingCartIconSVG: {
-//     width: "40px"
-//   }
-// }
+export const NavigationBar: React.FC = () => {
 
+  const { shoppingCart } = useContext(ShoppingCartContext)
 
-interface Props {}
+  let itemsInCart = shoppingCart.length
 
-export const NavigationBar: React.FC<Props> = () => {
   return (
     <nav id="NavigationBar" >
       <a href="/" className="LogoIcon" >
@@ -60,7 +34,7 @@ export const NavigationBar: React.FC<Props> = () => {
         >
           <tspan x="0" y="0" textAnchor="middle">
             {/* Add Amount variable here */}
-            {23}
+            {itemsInCart}
           </tspan>
         </text>
         <g id="basket" transform="translate(1782 68)">

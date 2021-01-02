@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { firestore } from '../../firebaseConfig';
 
-// Import Item TEMP
-// import NikeAirImage from '../../img/nikeAir.jpg';
+interface Props {
+  id: string,
+  name: string,
+  price: number,
+  colour: string,
+  size: "xs" | "s" | "m" | "l" | "xl" | "xxl"
+}
 
-interface Props {}
+export const ShoppingCartItem: React.FC<Props> = ({ id, name, price, colour, size }) => {
 
-export const ShoppingCartItem: React.FC<Props> = () => {
+  const [imageURL, setImageURL] = useState<string>()
+
+  const fetchImageURL = async () => {
+    const item = await firestore.collection("Items").doc(id).get()
+    setImageURL(item.data()!.mainThumbnail)
+  }
+
+  useEffect(() => {
+    fetchImageURL()
+  })
+
   return (
     <div className="cartItem">
       <div className="cartItemMain">
         <div className="cartItemImage">
-          <img src={""} alt="" />
+          <img src={imageURL} alt="" />
           <div className="quantityIcon">
             <svg xmlns="http://www.w3.org/2000/svg" width={22} height={22} viewBox="0 0 27 27">
               <g id="Group_11" data-name="Group 11" transform="translate(-1466 -17)">
@@ -42,11 +58,11 @@ export const ShoppingCartItem: React.FC<Props> = () => {
           </div>
         </div>
         <div className="itemDescription">
-          <h4>The Nike 270</h4>
-          <p>Black / XXL</p>
+          <h4>{name}</h4>
+          <p>{colour} / {size}</p>
         </div>
       </div>
-      <p className="cartItemPrice">$5 999.99</p>
+      <p className="cartItemPrice">${price}</p>
     </div>
   );
 };
