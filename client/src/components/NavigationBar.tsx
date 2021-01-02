@@ -35,10 +35,6 @@ import "./NavigationBarandFooterSectionStyles.css"
 
 interface Props {}
 
-interface IShoppingCart {
-  amount: number
-}
-
 export const NavigationBar: React.FC = () => {
 
   const { shoppingCart } = useContext(ShoppingCartContext)

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, createContext} from 'react'
+import ShoppingCart from './ShoppingCartPage/ShoppingCartIndex'
 
 interface Props {}
 
@@ -28,22 +29,29 @@ export const ShoppingCartContextProvider: React.FC<React.ReactNode> = ({ childre
         setShoppingCart(JSON.parse(existing))  
         console.log("Existing and pased")
     }else {
-        setShoppingCart([])
+        // setShoppingCart([])
     }
 
-   },[])
+    console.log("active")
+
+   }, [])
 
    const AddToShoppingCart = (item: ShoppingCartModel) => {
     // Push to current state array
-    setShoppingCart(currentCart => [...currentCart, item])
+    const newCart = shoppingCart.concat(item)
+    setShoppingCart(newCart)
+
     console.log("Updated")
     console.log(shoppingCart)
 
-    // update local storage
-   }
+    // update local storage 
+    console.log(JSON.stringify(newCart))
+    localStorage.setItem("Sol17ShoppingCart", JSON.stringify(newCart))
+    console.log("local saved")
+  }
 
     return (
-        <ShoppingCartContext.Provider value={{ shoppingCart }} >
+        <ShoppingCartContext.Provider value={{ shoppingCart, AddToShoppingCart}} >
             { children }
         </ShoppingCartContext.Provider>
     );

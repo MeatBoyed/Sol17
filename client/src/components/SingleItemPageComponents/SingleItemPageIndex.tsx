@@ -57,7 +57,7 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
 
   useEffect(() => {
     fetchData()
-  })
+  }, [])
 
   return (
     <React.Fragment>
