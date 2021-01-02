@@ -6,23 +6,27 @@ import React from 'react'
 import './ItemTemplateStyle.css'
 
 interface Props {
-
+    id: string,
+    name: string,
+    price: number,
+    colour: string,
+    size: "xs" | "s" | "m" | "l" | "xl" | "xxl"
 }
 
-export const Item: React.FC<Props> = () => {
+export const Item: React.FC<Props> = ({ id, name, price, colour, size }) => {
     return (
         <div className="item">
             <div className="itemInfo">
                 <a href="/item/11"><img src={""} alt=""/>
                 </a>
                 <div className="itemInfoText">
-                    <a href="/item/11"><p className="itemName">Nike 270</p>
+                    <a href="/item/11"><p className="itemName">{ name }</p>
                     </a>
                     <div className="SizeandColourInfoCollection">
-                        <p className="itemColour">Black / </p>
-                        <p className="itemSize">XXL</p>
+                        <p className="itemColour">{colour} / </p>
+                        <p className="itemSize">{size}</p>
                     </div>
-                    <p className="itemPrice">$ 5 999.99</p>
+                    <p className="itemPrice">${price}</p>
                 </div>
             </div>
             <div className="itemQuantityandRemove">

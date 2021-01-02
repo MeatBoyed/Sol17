@@ -1,7 +1,4 @@
 import React, { useState, useEffect, createContext} from 'react'
-import ShoppingCart from './ShoppingCartPage/ShoppingCartIndex'
-
-interface Props {}
 
 interface ShoppingCartModel {
     id: string,
@@ -11,9 +8,6 @@ interface ShoppingCartModel {
     size: string
 }
 
-// [{"id":"12","size":"xs"},{"id":"312","size":"xs"},{"id":"1442","size":"xs"},{"id":"512","size":"xs"},{"id":"6712","size":"xs"},{"id":"1212","size":"xs"}]
-
-// export const ShoppingCartContext = createContext<Partial<ShoppingCartModel>>({})
 export const ShoppingCartContext = createContext<ShoppingCartModel[] | any>([])
 
 export const ShoppingCartContextProvider: React.FC<React.ReactNode> = ({ children }) => {
@@ -28,11 +22,7 @@ export const ShoppingCartContextProvider: React.FC<React.ReactNode> = ({ childre
     if (existing != null) {
         setShoppingCart(JSON.parse(existing))  
         console.log("Existing and pased")
-    }else {
-        // setShoppingCart([])
     }
-
-    console.log("active")
 
    }, [])
 
