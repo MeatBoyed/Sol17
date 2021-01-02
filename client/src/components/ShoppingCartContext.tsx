@@ -1,11 +1,11 @@
 import React, { useState, useEffect, createContext} from 'react'
 
-interface ShoppingCartModel {
+export interface ShoppingCartModel {
     id: string,
     name: string,
     price: number,
     colour: string,
-    size: string
+    size: "xs" | "s" | "m" | "l" | "xl" | "xxl"
 }
 
 export const ShoppingCartContext = createContext<ShoppingCartModel[] | any>([])
@@ -15,9 +15,7 @@ export const ShoppingCartContextProvider: React.FC<React.ReactNode> = ({ childre
    const [shoppingCart, setShoppingCart] = useState<ShoppingCartModel[]>([]) 
     
    useEffect(() => {
-    //    Get shoppingCart from local storage
     let existing = localStorage.getItem("Sol17ShoppingCart")
-    console.log(existing)
     
     if (existing != null) {
         setShoppingCart(JSON.parse(existing))  
@@ -31,14 +29,10 @@ export const ShoppingCartContextProvider: React.FC<React.ReactNode> = ({ childre
     const newCart = shoppingCart.concat(item)
     setShoppingCart(newCart)
 
-    console.log("Updated")
-    console.log(shoppingCart)
-
     // update local storage 
-    console.log(JSON.stringify(newCart))
     localStorage.setItem("Sol17ShoppingCart", JSON.stringify(newCart))
-    console.log("local saved")
   }
+
 
     return (
         <ShoppingCartContext.Provider value={{ shoppingCart, AddToShoppingCart}} >

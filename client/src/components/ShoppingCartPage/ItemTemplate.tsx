@@ -6,6 +6,7 @@ import React from 'react'
 import './ItemTemplateStyle.css'
 
 interface Props {
+    index: number
     id: string,
     name: string,
     price: number,
@@ -13,7 +14,7 @@ interface Props {
     size: "xs" | "s" | "m" | "l" | "xl" | "xxl"
 }
 
-export const Item: React.FC<Props> = ({ id, name, price, colour, size }) => {
+export const Item: React.FC<Props> = ({ index, id, name, price, colour, size }) => {
     return (
         <div className="item">
             <div className="itemInfo">
