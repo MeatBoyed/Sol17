@@ -1,64 +1,119 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, Redirect } from "react-router-dom"
+import { firestore } from '../../firebaseConfig';
+import { ShoppingCartContext } from '../ShoppingCartContext';
 
-interface Props {}
+interface UserData {
+  email: string,
+  firstName: string,
+  lastName: string,
+  country: string,
+  city: string,
+  address: string,
+  phoneNumber: string 
+}
 
-export const CheckoutSection: React.FC<Props> = () => {
+
+export const CheckoutSection: React.FC = () => {
+
+  const { shoppingCart } = useContext(ShoppingCartContext)
+
+  const [email, setEmail] = useState<string>("")
+  const [firstName, setFirstName] = useState<string>("")
+  const [lastName, setLastName] = useState<string>("")
+  const [country, setCountry] = useState<string>("")
+  const [city, setCity] = useState<string>("")
+  const [address, setAddress] = useState<string>("")
+  const [phoneNumber, setPhoneNumber] = useState<string>("")
+
+  const [isCartEmpty, setIsCartEmpty] = useState<boolean>()
+  const [sucess, setSucess] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (shoppingCart.length === 0) {
+      setIsCartEmpty(true)
+    }else {
+      setIsCartEmpty(false)
+    }
+  }, [shoppingCart])
+
+  const SubmitHandler = (event: React.SyntheticEvent) => {
+    event.preventDefault()
+
+    // Create UserData object
+    const userData: UserData = {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      country: country,
+      city: city,
+      address: address,
+      phoneNumber: phoneNumber
+    }
+    
+    firestore.collection("Orders").add({ shoppingCart: shoppingCart, UserData: userData})
+    setSucess(true)
+  }
+
+
   return (
     <div id="CheckoutSection">
-      <form action="submit">
+      <form action="submit" onSubmit={SubmitHandler}>
         <div className="contactInfo">
           <p>Contact information</p>
           <div className="form__group">
-            <input type="email" className="form__field" placeholder="emailAddress" name="emailAddress" id="emailAddress" />
-            <label htmlFor="emailAddress" className="form__label">
-              Email Address
+            <input type="email" className="form__field" placeholder="emailaddress" name="emailaddress" id="emailaddress" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <label htmlFor="emailaddress" className="form__label">
+              Email address
             </label>
           </div>
         </div>
-        <div className="shippingAddress">
-          <p>Shipping Address</p>
+        <div className="shippingaddress">
+          <p>Shipping address</p>
+          {sucess ? <p style={{color: 'green'}} >Order Sucessful</p> : null}
+          {isCartEmpty ? <Redirect to="/" /> : null }
           <div className="nameInput">
             <div className="form__group">
-              <input type="text" className="form__field" placeholder="FirstName" name="FirstName" id="FirstName" required />
+              <input type="text" className="form__field" placeholder="firstName" name="firstName" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
               <label htmlFor="FirstName" className="form__label">
                 First Name
               </label>
             </div>
             <div className="form__group">
-              <input type="text" className="form__field" placeholder="LastName" name="LastName" id="LastName" required />
-              <label htmlFor="LastName" className="form__label">
+              <input type="text" className="form__field" placeholder="lastName" name="lastName" id="lastName" value={lastName}  onChange={e => setLastName(e.target.value)} required />
+              <label htmlFor="lastName" className="form__label">
                 Last Name
               </label>
             </div>
           </div>
           <div className="form__group">
-            <input type="text" className="form__field" placeholder="Address" name="Address" id="Address" required />
-            <label htmlFor="Address" className="form__label">
-              Address
-            </label>
-          </div>
-          <div className="form__group">
-            <input type="text" className="form__field" placeholder="City" name="City" id="City" required />
-            <label htmlFor="City" className="form__label">
-              City
-            </label>
-          </div>
-          <div className="form__group">
-            <input type="text" className="form__field" placeholder="Country" name="Country" id="Country" required />
-            <label htmlFor="Country" className="form__label">
+            <input type="text" className="form__field" placeholder="country" name="country" id="country" value={country} onChange={e => setCountry(e.target.value)} required />
+            <label htmlFor="country" className="form__label">
               Country
             </label>
           </div>
           <div className="form__group">
-            <input type="number" className="form__field" placeholder="PhoneNumber" name="PhoneNumber" id="PhoneNumber" />
-            <label htmlFor="PhoneNumber" className="form__label">
+            <input type="text" className="form__field" placeholder="City" name="city" id="city" value={city} onChange={e => setCity(e.target.value)} required />
+            <label htmlFor="city" className="form__label">
+              City
+            </label>
+          </div>
+          <div className="form__group">
+            <input type="text" className="form__field" placeholder="address" name="address" id="address" value={address} onChange={e => setAddress(e.target.value)} required />
+            <label htmlFor="address" className="form__label">
+              Address 
+            </label>
+          </div>
+          <div className="form__group">
+            <input type="number" className="form__field" placeholder="PhoneNumber" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
+            <label htmlFor="phoneNumber" className="form__label">
               Phone Number (Optional)
             </label>
           </div>
-          <div className="saveInfoContainer">
-            <input type="checkbox" name="SaveInfo" id="SaveInfo" />
+          {/* <div className="saveInfoContainer">
+            <input type="checkbox" name="SaveInfo" id="SaveInfo"  />
             <h5>Save this information for next time</h5>
-          </div>
+          </div> */}
         </div>
         <div className="returnContainer">
           <svg
@@ -75,7 +130,7 @@ export const CheckoutSection: React.FC<Props> = () => {
               transform="translate(-0.001 0.003)"
             />
           </svg>
-          <h5>Return to cart</h5>
+          <h5><Link to="/shoppingCart">Return to Cart</Link></h5>
         </div>
         <button className="submitButton" type="submit">
           <h5>Continue to shopping</h5>

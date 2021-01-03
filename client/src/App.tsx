@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // ShoppingCart Context
-import { ShoppingCartContextProvider } from "./components/ShoppingCartContext"
+import { ShoppingCartContextProvider, ShoppingCartContext } from "./components/ShoppingCartContext"
 
 
 // Route Component Index compontent
@@ -10,9 +10,11 @@ const HomePageIndex = React.lazy(() => import("./components/HomePageComponents/H
 const SingleItemPageIndex = React.lazy(() => import("./components/SingleItemPageComponents/SingleItemPageIndex"))
 const CheckoutPageIndex = React.lazy(() => import("./components/CheckoutPageComponents/CheckoutPageIndex"))
 const ShoppingCart = React.lazy(() => import("./components/ShoppingCartPage/ShoppingCartIndex"))
-// import { reduceEachLeadingCommentRange } from 'typescript';
 
 function App() {
+  
+  const { shoppingCart } = useContext(ShoppingCartContext)
+
   return (
     <BrowserRouter>
       <React.Suspense fallback={<div>Loading Beep boop!......</div>}>
