@@ -30,12 +30,12 @@ export const CheckoutSection: React.FC = () => {
   const [sucess, setSucess] = useState<boolean>(false)
 
   useEffect(() => {
-    if (shoppingCart.length == 0) {
+    if (shoppingCart.length === 0) {
       setIsCartEmpty(true)
     }else {
       setIsCartEmpty(false)
     }
-  })
+  }, [shoppingCart])
 
   const SubmitHandler = (event: React.SyntheticEvent) => {
     event.preventDefault()
