@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { Link } from "react-router-dom"
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, Redirect } from "react-router-dom"
 import { firestore } from '../../firebaseConfig';
 import { ShoppingCartContext } from '../ShoppingCartContext';
 
@@ -13,6 +13,7 @@ interface UserData {
   phoneNumber: string 
 }
 
+
 export const CheckoutSection: React.FC = () => {
 
   const { shoppingCart } = useContext(ShoppingCartContext)
@@ -25,7 +26,16 @@ export const CheckoutSection: React.FC = () => {
   const [address, setAddress] = useState<string>("")
   const [phoneNumber, setPhoneNumber] = useState<string>("")
 
+  const [isCartEmpty, setIsCartEmpty] = useState<boolean>()
   const [sucess, setSucess] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (shoppingCart.length == 0) {
+      setIsCartEmpty(true)
+    }else {
+      setIsCartEmpty(false)
+    }
+  })
 
   const SubmitHandler = (event: React.SyntheticEvent) => {
     event.preventDefault()
@@ -41,7 +51,6 @@ export const CheckoutSection: React.FC = () => {
       phoneNumber: phoneNumber
     }
     
-    // Create doc and post
     firestore.collection("Orders").add({ shoppingCart: shoppingCart, UserData: userData})
     setSucess(true)
   }
@@ -61,9 +70,8 @@ export const CheckoutSection: React.FC = () => {
         </div>
         <div className="shippingaddress">
           <p>Shipping address</p>
-          {sucess ? 
-          <p style={{color: 'green'}} >Order Sucessful</p>
-          : null}
+          {sucess ? <p style={{color: 'green'}} >Order Sucessful</p> : null}
+          {isCartEmpty ? <Redirect to="/" /> : null }
           <div className="nameInput">
             <div className="form__group">
               <input type="text" className="form__field" placeholder="firstName" name="firstName" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
