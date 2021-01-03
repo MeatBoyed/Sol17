@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { firestore } from '../../firebaseConfig';
+import { ShoppingCartContext } from '../ShoppingCartContext';
 
 interface Props {}
 
@@ -14,13 +17,18 @@ interface UserData {
 
 export const CheckoutSection: React.FC<Props> = () => {
 
-  const [email, setEmail] = useState<string>("")
-  const [firstName, setFirstName] = useState<string>("")
-  const [lastName, setLastName] = useState<string>("")
-  const [country, setCountry] = useState<string>("")
-  const [city, setCity] = useState<string>("")
-  const [address, setAddress] = useState<string>("")
-  const [phoneNumber, setPhoneNumber] = useState<string>("")
+  const { shoppingCart } = useContext(ShoppingCartContext)
+
+  const [email, setEmail] = useState<string>("charlie@gmail.com ")
+  const [firstName, setFirstName] = useState<string>("Dove")
+  const [lastName, setLastName] = useState<string>("Rule")
+  const [country, setCountry] = useState<string>("United States")
+  const [city, setCity] = useState<string>("Arizona")
+  const [address, setAddress] = useState<string>("12 Thomas st")
+  const [phoneNumber, setPhoneNumber] = useState<string>("1234534")
+
+  const [saveInfo, setSaveInfo] = useState<boolean>(false)
+  const [sucess, setSucess] = useState<boolean>(false)
 
   const SubmitHandler = (event: React.SyntheticEvent) => {
     event.preventDefault()
@@ -35,13 +43,12 @@ export const CheckoutSection: React.FC<Props> = () => {
       address: address,
       phoneNumber: phoneNumber
     }
-
-    console.log(userData)
-
-    // Get ShoppingCart info
-    // Create ShoppingCart object
+    
     // Create doc and post
+    firestore.collection("Orders").add({ shoppingCart: shoppingCart, UserData: userData})
+    setSucess(true)
   }
+
 
   return (
     <div id="CheckoutSection">
@@ -57,6 +64,9 @@ export const CheckoutSection: React.FC<Props> = () => {
         </div>
         <div className="shippingaddress">
           <p>Shipping address</p>
+          {sucess ? 
+          <p style={{color: 'green'}} >Order Sucessful</p>
+          : null}
           <div className="nameInput">
             <div className="form__group">
               <input type="text" className="form__field" placeholder="firstName" name="firstName" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
@@ -95,10 +105,10 @@ export const CheckoutSection: React.FC<Props> = () => {
               Phone Number (Optional)
             </label>
           </div>
-          <div className="saveInfoContainer">
-            <input type="checkbox" name="SaveInfo" id="SaveInfo" />
+          {/* <div className="saveInfoContainer">
+            <input type="checkbox" name="SaveInfo" id="SaveInfo"  />
             <h5>Save this information for next time</h5>
-          </div>
+          </div> */}
         </div>
         <div className="returnContainer">
           <svg
