@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link } from "react-router-dom"
 import { firestore } from '../../firebaseConfig';
 import { ShoppingCartContext } from '../ShoppingCartContext';
-
-interface Props {}
 
 interface UserData {
   email: string,
@@ -15,19 +13,18 @@ interface UserData {
   phoneNumber: string 
 }
 
-export const CheckoutSection: React.FC<Props> = () => {
+export const CheckoutSection: React.FC = () => {
 
   const { shoppingCart } = useContext(ShoppingCartContext)
 
-  const [email, setEmail] = useState<string>("charlie@gmail.com ")
-  const [firstName, setFirstName] = useState<string>("Dove")
-  const [lastName, setLastName] = useState<string>("Rule")
-  const [country, setCountry] = useState<string>("United States")
-  const [city, setCity] = useState<string>("Arizona")
-  const [address, setAddress] = useState<string>("12 Thomas st")
-  const [phoneNumber, setPhoneNumber] = useState<string>("1234534")
+  const [email, setEmail] = useState<string>("")
+  const [firstName, setFirstName] = useState<string>("")
+  const [lastName, setLastName] = useState<string>("")
+  const [country, setCountry] = useState<string>("")
+  const [city, setCity] = useState<string>("")
+  const [address, setAddress] = useState<string>("")
+  const [phoneNumber, setPhoneNumber] = useState<string>("")
 
-  const [saveInfo, setSaveInfo] = useState<boolean>(false)
   const [sucess, setSucess] = useState<boolean>(false)
 
   const SubmitHandler = (event: React.SyntheticEvent) => {
@@ -125,7 +122,7 @@ export const CheckoutSection: React.FC<Props> = () => {
               transform="translate(-0.001 0.003)"
             />
           </svg>
-          <h5>Return to cart</h5>
+          <h5><Link to="/shoppingCart">Return to Cart</Link></h5>
         </div>
         <button className="submitButton" type="submit">
           <h5>Continue to shopping</h5>
