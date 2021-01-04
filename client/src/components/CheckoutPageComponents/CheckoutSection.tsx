@@ -68,7 +68,7 @@ export const CheckoutSection: React.FC = () => {
             </label>
           </div>
         </div>
-        <div className="shippingaddress">
+        <div className="shippingAddress">
           <p>Shipping address</p>
           {sucess ? <p style={{color: 'green'}} >Order Sucessful</p> : null}
           {isCartEmpty ? <Redirect to="/" /> : null }
