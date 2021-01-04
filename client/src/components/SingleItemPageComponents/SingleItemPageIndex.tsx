@@ -43,7 +43,6 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
     if(!item.exists) {
       setLoadingAndValidation({ isLoading: false, isValid: false})
     }else {
-      setLoadingAndValidation({ isLoading: false, isValid: true})
       setItemData({
         id: item.id,
         name: item.data()!.name,
@@ -52,6 +51,7 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
         images: item.data()!.images,
         colours: item.data()!.colours,
       })
+      setLoadingAndValidation({ isLoading: false, isValid: true})
     }
   }
 
@@ -64,7 +64,7 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
       <NavigationBar />
       <section id="SingelItem">
         {loadingAndValidation.isLoading ? 
-          <h1>LOADING..................</h1>
+         <div className="ShopSectionLoadingContainer"><div className="loader">Loadig...</div></div> 
          :  
           <React.Fragment>
             {loadingAndValidation.isValid ?
