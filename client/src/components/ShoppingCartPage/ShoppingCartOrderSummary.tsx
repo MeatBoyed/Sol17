@@ -12,9 +12,10 @@ export const OrderSummary: React.FC = () => {
         let total = 0
         shoppingCart.map((item: ShoppingCartModel) => {
             total = total + item.price
+            return total
         })
         setTotalPrice(total)
-    }, [])
+    }, [shoppingCart])
 
     return (
         <div className="PriceInfoCollection">
