@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { firestore } from "../../firebaseConfig"
 
-import { Item } from './Item';
+// Import Loading Spinner
+import "../LoadingSpinner.css"
 
-interface Props {}
+import { Item } from './Item';
 
 interface Item {
   id: string,
@@ -12,9 +13,10 @@ interface Item {
   image: string
 }
 
-export const ShopSection: React.FC<Props> = () => {
+export const ShopSection: React.FC = () => {
 
   const [items, setItems] = useState<Item[]>([])
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const getItems = async () => {
     const itemsData = await firestore.collection("Items").get()
@@ -29,6 +31,7 @@ export const ShopSection: React.FC<Props> = () => {
         }
       ])
     })
+    setIsLoading(false)
   }
 
   useEffect(() => {
@@ -39,6 +42,7 @@ export const ShopSection: React.FC<Props> = () => {
     <section id="ShopNowSection">
       <h2>SHOP</h2>
       <div className="itemsCollection">
+        {isLoading ?  <div className="ShopSectionLoadingContainer"><div className="loader">Loadig...</div></div> : null}
         {items.map((item) => (
           <Item key={item.id} name={item.name} price={item.price} url={`/item/${item.id}`} image={item.image} />
         ))}
