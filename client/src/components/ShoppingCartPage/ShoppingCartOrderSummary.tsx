@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { Link } from "react-router-dom"
 import { ShoppingCartContext, ShoppingCartModel } from '../ShoppingCartContext';
 
 
@@ -23,9 +24,7 @@ export const OrderSummary: React.FC = () => {
             </div>
             <p className="priceInfo">Shipping, taxes, and discount codes calculated at checkout.</p>
             <button className="checkoutButton">
-                <a href="/checkout">
-                    <h5 >Checkout</h5>
-                </a>
+               <h5><Link to="/checkout" style={{color: 'white'}}>Checkout</Link></h5> 
             </button>
         </div>
     );
