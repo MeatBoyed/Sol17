@@ -12,7 +12,6 @@ import './SingleItemPageStyle.css';
 import { NavigationBar } from '../NavigationBar';
 import { ImageViewer } from './ImageViewer';
 import { DescriptionViewer } from './DescriptionViewer';
-import { RecomendedSection } from './RecomendedSection';
 import { FooterSection } from '../FooterSection';
 import { Item } from '../ShoppingCartPage/ItemTemplate';
 
@@ -77,7 +76,6 @@ export const SingleItemPageIndex: React.FC<Props> = ({ match }) => {
           </React.Fragment>
         }
       </section>
-      {/* <RecomendedSection/> */}
       <FooterSection />
     </React.Fragment>
   );

@@ -18,9 +18,10 @@ export const OrderSummarySection: React.FC<Props> = () => {
     let total = 0
     shoppingCart.map((item: ShoppingCartModel) => {
       total = total + item.price
+      return total
     })
     setTotalPrice(total)
-  })
+  }, [shoppingCart])
 
   return (
     <div id="OrderSummary">
